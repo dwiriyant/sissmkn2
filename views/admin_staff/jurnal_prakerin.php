@@ -1,15 +1,15 @@
 <?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
 <?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_dataprakerin.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_jurnalprakerin.php"); ?>
 <?php
-$object = new tbl_dataprakerin();
+$object = new tbl_jurnalprakerin();
 ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Data Guru</h1>
+                        <h1>Data Jurnal Prakerin</h1>
                     </div>
                 </div>
             </div>
@@ -17,8 +17,8 @@ $object = new tbl_dataprakerin();
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                           <li><a href="#">Data Prakerin</a></li>
-                            <li class="active">List Data Prakerin</li>
+                           <li><a href="#">Data Jurnal Prakerin</a></li>
+                            <li class="active">List Data Jurnal Prakerin</li>
                         </ol>
                     </div>
                 </div>
@@ -30,23 +30,23 @@ $object = new tbl_dataprakerin();
                   <div class="col-md-12">
                     <div class="card">
                         <!-- <div class="card-footer">
-                          <a href="tambah_perusahaan.php"><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa ti-import"></i> Tambah Data Perusahaan
-                          </button> </a>
+                          <a href="#"><button title="export data berupa excel" type="submit" class="btn btn-success btn-sm">
+                            <i class="fa ti-upload"></i> Cetak
+                          </button>
+                          </a>
                         </div> -->
                         <div class="card-header">
-                            <strong class="card-title">List </strong> Data Prakerin
+                            <strong class="card-title">List </strong> Data Jurnal Prakerin
                         </div>
                         <div class="card-body">
                           <table id="coba" class="table table-striped table-bordered">
                                 <thead>
                                   <tr>
                                     <th>N0.</th>
-                                    <th>Id Tempat Prakerin</th>
-                                    <th>Nama Prakerin</th>
-                                    <th>Alamat Prakerin</th>
-                                    <th>Telpon Prakerin</th>                                   
-                                    <th>Kota Prakerin</th>
-                                    <th>Program</th>
+                                    <th>NIS</th>
+                                    <th>Nama Siswa</th>
+                                    <th>Nama Industri</th>
+                                    <th>Jurnal</th>
                                     <th>Action</th>
                                   </tr>
                                 </thead>
@@ -56,17 +56,17 @@ $object = new tbl_dataprakerin();
                                 ?>
                                   <tr>
                                  <th scope="row"><?= $i++; ?></th>
-                                 <td><?= $data['id_tmp_prakerin']; ?></td>
+                                 <td><?= $data['nis']; ?></td>
+                                 <td><?= $data['namaSiswa']; ?></td>
                                  <td><?= $data['nama_prakerin']; ?></td>
-                                <td><?= $data['alamat_prakerin']; ?></td>
-                                <td><?= $data['telp_prakerin']; ?></td>                              
-                                <td><?= $data['kota_prakerin']; ?></td>
-                                <td><?= $data['program']; ?></td>
-                                
+                                 <td><a href="jurnal/<?= $data['jurnal']?>" target="_blank"><?= $data['jurnal']?></a></td>
                                 <td>
-                                      <a href="detail_perusahaan.php?id_tmp_prakerin=<?=$data['id_tmp_prakerin']; ?> &aksi=update"><button title="Detail" type="button" class="btn btn-primary btn-sm"><i class="fa ti-eye"></i></button>
-                                      <a href="edit_perusahaan.php?id_tmp_prakerin=<?=$data['id_tmp_prakerin']; ?> &aksi=update"><button title="update" type="button" class="btn btn-success btn-sm"><i class="fa ti-pencil-alt"></i></button>
-                                      <a href="proses_perusahaan.php?id_tmp_prakerin=<?=$data['id_tmp_prakerin']; ?> &aksi=hapus"><button title="Hapus" type="button" class="btn btn-danger btn-sm"><i class="fa ti-eraser"></i></button></a>
+                                      <a href="detail_jurnalprakerin.php?id_jurnalprakerin=<?=$data['id_jurnalprakerin']; ?> &aksi=update"><button title="Detail" type="button" class="btn btn-primary btn-sm"><i class="fa ti-eye"></i></button></a>
+
+                                      <a href="upload_jurnalprakerin.php?id_jurnalprakerin=<?=$data['id_jurnalprakerin']; ?> &aksi=update"><button title="Upload" type="button" class="btn btn-success btn-sm"><i class="fa ti-upload"></i> Upload Jurnal</button></a>
+
+                                      <a href="proses_jurnalprakerin.php?id_jurnalprakerin=<?=$data['id_jurnalprakerin']; ?> &aksi=hapus"><button title="Hapus" type="button" class="btn btn-danger btn-sm"><i class="fa ti-eraser"></i></button></a>
+                                      
                                       </td>
                                 </tr>
                                 <?php } ?>

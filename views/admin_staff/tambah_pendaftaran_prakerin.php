@@ -65,75 +65,47 @@ $tbl_perusahaan = new t_prakerin_siswa();
                                       <div class="row">
                                           <div class="col-6">
                                               <div class="form-group">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Tempat Prakerin</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="id_tmp_prakerin" name="id_tmp_prakerin" placeholder="Masukan Alamat" class="form-control"value="<?= $data['id_tmp_prakerin']; ?>"></div>
+                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">NIS</label></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="nis" name="nis" class="form-control"value="<?= $data['nis']; ?>"></div>
                                               </div>
                                           </div>
                                          
                                           <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Id Pembimbing</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="id_pembimbing" name="id_pembimbing" placeholder="Masukan No Telp" class="form-control" value="<?= $data['id_pembimbing']; ?>"></div>
+                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tempat Prakerin</label></div>
+                                              <div class="col-12 col-md-9">
+                                                <select class="form-control" id="id_tmp_prakerin" name="id_tmp_prakerin">
+                                                  <?php                                                     foreach ($tbl_perusahaan->getNamaPrakerin() as $t) {
+                                                      echo'
+                                                        <option value="'.$t['id_tmp_prakerin'].'">'.$t['nama_prakerin'].'</option>
+                                                      ';
+                                                    }
+                                                   ?>
+                                                </select>
+                                              </div>
                                           </div>
-                                          
+                                        
                                       </div>
                                       
                                       <div class="row">
-                                         <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">No Induk Siswa</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="no_induk" name="no_induk" placeholder="Masukan kota prakerin" class="form-control" value="<?= $data['no_induk']; ?>"></div>
-                                          </div>
-                                          
-                                          <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Prakerin</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="nama_prakerin" name="nama_prakerin" placeholder="Masukan Program" class="form-control" value="<?= $data['nama_prakerin']; ?>"></div>
-                                          </div>
-
-                                      </div>
-                                      <div class="row">
-                                         <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Alamat Prakerin</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="alamat_prakerin" name="alamat_prakerin" placeholder="Masukan Nama Pembimbing" class="form-control" value="<?= $data['alamat_prakerin']; ?>"></div>
-                                          </div>
-                                          
-                                          <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Pembimbing</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="pembimbing" name="pembimbing" placeholder="Masukan Nama Direktur" class="form-control" value="<?= $data['pembimbing']; ?>"></div>
-                                          </div>
-
-                                      </div>
-                                      <div class="row">
-                                         <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">NIP</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="nip" name="nip" placeholder="Masukan Email Perusahaan" class="form-control" value="<?= $data['nip']; ?>"></div>
-                                          </div>
                                           
                                           <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Lama Bulan Magang</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="lama_bln" name="lama_bln" placeholder="Masukan Website Perusahaan" class="form-control" value="<?= $data['lama_bln']; ?>"></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="lama_bln" name="lama_bln" class="form-control" value="<?= $data['lama_bln']; ?>"></div>
+                                          </div>
+                                          <div class="col-6">
+                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kelas</label></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="kelas" name="kelas"  class="form-control" value="<?= $data['kelas']; ?>"></div>
                                           </div>
 
                                       </div>
                                       <div class="row">
                                          <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tanggal Mulai</label></div>
-                                              <div class="col-12 col-md-9"><input type="date" id="tgl_start" name="tgl_start" placeholder="Masukan Tahun Ajaran" class="form-control" value="<?= $data['tgl_start']; ?>"></div>
+                                              <div class="col-12 col-md-9"><input type="date" id="tgl_start" name="tgl_start" class="form-control" value="<?= $data['tgl_start']; ?>"></div>
                                           </div>
                                           <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tanggal Selesai</label></div>
-                                              <div class="col-12 col-md-9"><input type="date" id="tgl_akhir" name="tgl_akhir" placeholder="Masukan Website Perusahaan" class="form-control" value="<?= $data['tgl_akhir']; ?>"></div>
-                                          </div>
-                                          
-
-                                      </div>
-
-                                      <div class="row">
-                                         <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tahun Pelajaran</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="tapel" name="tapel" placeholder="Masukan Tahun Ajaran" class="form-control" value="<?= $data['tapel']; ?>"></div>
-                                          </div>
-                                          <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kelas</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="kelas" name="kelas" placeholder="Masukan Website Perusahaan" class="form-control" value="<?= $data['kelas']; ?>"></div>
+                                              <div class="col-12 col-md-9"><input type="date" id="tgl_akhir" name="tgl_akhir" class="form-control" value="<?= $data['tgl_akhir']; ?>"></div>
                                           </div>
                                           
 
@@ -142,14 +114,8 @@ $tbl_perusahaan = new t_prakerin_siswa();
                                       <div class="row">
                                          <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Prakerin Ke</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="prakerinke" name="prakerinke" placeholder="Masukan Tahun Ajaran" class="form-control" value="<?= $data['prakerinke']; ?>"></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="prakerinke" name="prakerinke" class="form-control" value="<?= $data['prakerinke']; ?>"></div>
                                           </div>
-                                          <div class="col-6">
-                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Program</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="program" name="program" placeholder="Masukan Website Perusahaan" class="form-control" value="<?= $data['program']; ?>"></div>
-                                          </div>
-                                          
-
                                       </div>
                                           
                           </div>

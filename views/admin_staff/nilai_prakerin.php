@@ -1,8 +1,8 @@
 <?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
 <?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/Database.php"); ?>
-<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_pendaftaran_prakerin.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_nilaiprakerin.php"); ?>
 <?php
-$object = new t_prakerin_siswa();
+$object = new tbl_nilaiprakerin();
 ?>
 
         <div class="breadcrumbs">
@@ -17,8 +17,8 @@ $object = new t_prakerin_siswa();
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                           <li><a href="#">Data Prakerin</a></li>
-                            <li class="active">List Data Prakerin</li>
+                           <li><a href="#">Data Nilai Prakerin</a></li>
+                            <li class="active">List Data Nilai Prakerin</li>
                         </ol>
                     </div>
                 </div>
@@ -34,13 +34,9 @@ $object = new t_prakerin_siswa();
                             <i class="fa ti-upload"></i> Cetak
                           </button>
                           </a>
-                          <a href="tambah_pendaftaran_prakerin.php"><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa ti-import"></i> Tambah Daftar Prakerin
-                          </button> </a>
-                          <!-- <a href="surat_keluar.html"><button title="Tambahkan surat keluar" type="reset" class="btn btn-danger btn-sm"><i class="fa ti-export"></i> Tambah Surat Keluar
-                          </button></a> -->
                         </div>
                         <div class="card-header">
-                            <strong class="card-title">List </strong>Data Prakerin
+                            <strong class="card-title">List </strong> Data Prakerin
                         </div>
                         <div class="card-body">
                           <table id="coba" class="table table-striped table-bordered">
@@ -49,35 +45,24 @@ $object = new t_prakerin_siswa();
                                     <th>N0.</th>
                                     <th>NIS</th>
                                     <th>Nama Siswa</th>
-                                    <th>Tempat Prakerin</th>
-                                    <th>Lokasi</th>
-                                    <th>Pembimbing</th>
-                                    <th>Tanggal Mulai</th>
-                                    <th>Tanggal selesai</th>
-                                    <th>Program</th>
+                                    <th>Nama Industri</th>
                                     <th>Action</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                    <?php $i = 1; ?>
                                 <?php foreach($object->tampildata() as $data) {
-                                  
                                 ?>
                                   <tr>
                                  <th scope="row"><?= $i++; ?></th>
                                  <td><?= $data['nis']; ?></td>
                                  <td><?= $data['namaSiswa']; ?></td>
-                                <td><?= $data['nama_prakerin']; ?></td>
-                                <td><?= $data['kota_prakerin']; ?></td>
-                                <td><?= $data['pembimbing']; ?></td>
-                                <td><?= $data['tgl_start']; ?></td>
-                                <td><?= $data['tgl_akhir']; ?></td>
-                                <td><?= $data['program']; ?></td>
+                                 <td><?= $data['nama_prakerin']; ?></td>
                                 
                                 <td>
-                                      <a href="detail_pendaftaran_prakerin.php?id_siswa_prakerin=<?=$data['id_siswa_prakerin']; ?>&aksi=update"><button title="Detail" type="button" class="btn btn-primary btn-sm"><i class="fa ti-eye"></i></button>
-                                      <a href="edit_pendaftaran_prakerin.php?id_siswa_prakerin=<?=$data['id_siswa_prakerin']; ?> &aksi=update"><button title="update" type="button" class="btn btn-success btn-sm"><i class="fa ti-pencil-alt"></i></button>
-                                      <a href="proses_pendaftaran_prakerin.php?id_siswa_prakerin=<?=$data['id_siswa_prakerin']; ?> &aksi=hapus"><button title="Hapus" type="button" class="btn btn-danger btn-sm"><i class="fa ti-eraser"></i></button></a>
+                                      <a href="detail_nilaiprakerin.php?id_nilaiprakerin=<?=$data['id_nilaiprakerin']; ?> &aksi=update"><button title="Detail" type="button" class="btn btn-primary btn-sm"><i class="fa ti-eye"></i></button></a>
+                                      <a href="edit_nilaiprakerin.php?id_nilaiprakerin=<?=$data['id_nilaiprakerin']; ?> &aksi=update"><button title="update" type="button" class="btn btn-success btn-sm"><i class="fa ti-pencil-alt"></i></button></a>
+                                      <a href="proses_nilaiprakerin.php?id_nilaiprakerin=<?=$data['id_nilaiprakerin']; ?> &aksi=hapus"><button title="Hapus" type="button" class="btn btn-danger btn-sm"><i class="fa ti-eraser"></i></button></a>
                                       </td>
                                 </tr>
                                 <?php } ?>

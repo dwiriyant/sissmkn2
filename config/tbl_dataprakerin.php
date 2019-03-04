@@ -32,27 +32,35 @@ function tampilidprs() {
         return $id;
     }
 
-    function inserttbl_dataprakerin($id_dataprakerin, $id_pemsek, $id_pemdudi, $status, $tgl_mulai, $tgl_selesai) {
+    function inserttbl_dataprakerin($id_dataprakerin, $nis, $nama_siswa, $nama_industri, $status, $tgl_mulai, $tgl_selesai) {
         $con = $this->dbconnect();
-        $sql = 'INSERT INTO '.$this->table.' VALUES("'.$id_dataprakerin.'", "'.$id_pemsek.'", "'.$id_pemdudi.'", "'.$status.'", "'.$tgl_mulai.'", "'.$tgl_selesai.'")';
+        $sql = 'INSERT INTO '.$this->table.' VALUES("'.$id_dataprakerin.'", "'.$nis.'", "'.$nama_siswa.'", "'.$nama_industri.'", "'.$status.'", "'.$tgl_mulai.'", "'.$tgl_selesai.'")';
         $query = mysqli_query($con,$sql);
     }
     
-    function getdata($id_dataprakerin){
+    function getDetailtbl_dataprakerin($id_dataprakerin){
         $con = $this->dbconnect();
         $sql = "select * from ".$this->table.' where id_dataprakerin = "'.$id_dataprakerin.'"';
-        $query = mysqli_query($con,$sql);
+        $query = mysqli_query($con,$sql) or die (mysqli_error($con));
         while($data = mysqli_fetch_array($query)){
             $hasil[] = $data;
         }
             
         return $hasil;
     }
-   function updatetbl_dataprakerin($id_dataprakerin, $id_pemsek, $id_pemdudi, $status, $tgl_mulai, $tgl_selesai)
+
+   function updatetbl_dataprakerin($id_dataprakerin, $nis, $nama_siswa, $nama_industri, $status, $tgl_mulai, $tgl_selesai)
     {
         $con = $this->dbconnect();
-        $sql = 'UPDATE '.$this->table.' SET id_pemsek="'.$id_pemsek.'", id_pemdudi="'.$id_pemdudi.'", status="'.$status.'", tgl_mulai="'.$tgl_mulai.'", tgl_selesai="'.$tgl_selesai.'" where id_dataprakerin= "'.$id_dataprakerin.'"';
+        $sql = 'UPDATE '.$this->table.' SET nis="'.$nis.'", nama_siswa="'.$nama_siswa.'", nama_industri="'.$nama_industri.'", status="'.$status.'", tgl_mulai="'.$tgl_mulai.'", tgl_selesai="'.$tgl_selesai.'" where id_dataprakerin= "'.$id_dataprakerin.'"';
         $query = mysqli_query($con,$sql) or die(mysqli_error($con));
+    }
+
+    function deletetbl_prakerin($id_dataprakerin)
+    {
+        $con = $this->dbconnect();
+        $sql = 'DELETE from '.$this->table.' where id_dataprakerin = "'.$id_dataprakerin.'"';
+        $query = mysqli_query($con,$sql);
     }
 }
     ?>

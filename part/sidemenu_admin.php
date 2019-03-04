@@ -113,10 +113,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa ti-bookmark-alt"></i>Prakerin</a>
                         <ul class="sub-menu children dropdown-menu" style="background-color:#343a40;">
                             <li><i class="menu-icon fa ti-id-badge"></i><a href="<?php echo $siteurl; ?>/views/admin_staff/perusahaan.php">Data DUDI</a></li>
-                            <li><i class="menu-icon fa ti-id-badge"></i><a href="<?php echo $siteurl; ?>/views/admin_Staff/pendaftaran_prakerin.php">Pendaftaran Prakerin</a></li>
-                            <li><i class="menu-icon fa ti-id-badge"></i><a href="<?php echo $siteurl; ?>/views/admin_Staff/data_prakerin.php">Data Prakerin</a></li>
-                            <li><i class="menu-icon fa ti-id-badge"></i><a href="#">Jurnal Prakerin</a></li>
-                            <li><i class="menu-icon fa ti-id-badge"></i><a href="#">Nilai Prakerin</a></li>
+                            <li><i class="menu-icon fa ti-id-badge"></i><a href="<?php echo $siteurl; ?>/views/admin_Staff/pendaftaran_prakerin.php">Data Prakerin</a></li>
+                            <li><i class="menu-icon fa ti-id-badge"></i><a href="<?php echo $siteurl; ?>/views/admin_Staff/jurnal_prakerin.php">Jurnal Prakerin</a></li>
+                            <li><i class="menu-icon fa ti-id-badge"></i><a href="<?php echo $siteurl; ?>/views/admin_Staff/nilai_prakerin.php">Nilai Prakerin</a></li>
                         </ul>
                     </li>
 

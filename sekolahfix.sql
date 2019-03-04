@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2019 at 08:31 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 5.6.37
+-- Generation Time: 04 Mar 2019 pada 03.39
+-- Versi Server: 10.1.29-MariaDB
+-- PHP Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `absensi`
+-- Struktur dari tabel `absensi`
 --
 
 CREATE TABLE `absensi` (
@@ -38,7 +38,7 @@ CREATE TABLE `absensi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `absensi`
+-- Dumping data untuk tabel `absensi`
 --
 
 INSERT INTO `absensi` (`id_absensi`, `nis`, `id_kelas`, `keterangan`, `tanggal`, `jamke`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `absensi` (`id_absensi`, `nis`, `id_kelas`, `keterangan`, `tanggal`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `beasiswa`
+-- Struktur dari tabel `beasiswa`
 --
 
 CREATE TABLE `beasiswa` (
@@ -88,14 +88,14 @@ CREATE TABLE `beasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `beasiswa`
+-- Dumping data untuk tabel `beasiswa`
 --
 
 INSERT INTO `beasiswa` (`idBeasiswa`, `idBea`, `namaWali`, `alamatWali`, `noHPWali`, `pekerjaanWali`, `penghasilanWali`, `namaSiswa`, `nis`, `keringananSpp`, `keringananSbpp`, `krit1`, `krit2`, `krit3`, `krit4`, `krit5`, `krit6`, `krit7`, `krit8`, `krit9`, `krit10`, `essay1`, `essay2`, `essay3`, `essay4`, `essay5`, `essay6`, `essay7`, `essay8`, `essay9`, `thnAjaran`, `survey`, `status`) VALUES
 ('BEASISWA KARSA - 1818051051', 'BEASISWA KARSA - 1818051051', '', '', '', '', '200000', 'Bagus Yekti Widodo', '1818051051', '200000', '200000', '1', '5', '5', '4', '5', '5', '5', '5', '5', '5', '', '', '', '', '', '', '', '', '', '2017 - 2018 (ganjil)', 0, 'proses');
 
 --
--- Triggers `beasiswa`
+-- Trigger `beasiswa`
 --
 DELIMITER $$
 CREATE TRIGGER `delete_penilaian_beasiswa` BEFORE DELETE ON `beasiswa` FOR EACH ROW BEGIN 
@@ -287,7 +287,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_pembagian_kelas`
+-- Struktur dari tabel `detail_pembagian_kelas`
 --
 
 CREATE TABLE `detail_pembagian_kelas` (
@@ -297,7 +297,7 @@ CREATE TABLE `detail_pembagian_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detail_pembagian_kelas`
+-- Dumping data untuk tabel `detail_pembagian_kelas`
 --
 
 INSERT INTO `detail_pembagian_kelas` (`id_pembagian`, `id_kelas`, `nis`) VALUES
@@ -313,7 +313,7 @@ INSERT INTO `detail_pembagian_kelas` (`id_pembagian`, `id_kelas`, `nis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `filelampiran`
+-- Struktur dari tabel `filelampiran`
 --
 
 CREATE TABLE `filelampiran` (
@@ -334,7 +334,7 @@ CREATE TABLE `filelampiran` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `filelampiran_beasiswa`
+-- Struktur dari tabel `filelampiran_beasiswa`
 --
 
 CREATE TABLE `filelampiran_beasiswa` (
@@ -346,7 +346,7 @@ CREATE TABLE `filelampiran_beasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `filelampiran_beasiswa`
+-- Dumping data untuk tabel `filelampiran_beasiswa`
 --
 
 INSERT INTO `filelampiran_beasiswa` (`nis`, `sktm`, `ktp`, `kk`, `lain`) VALUES
@@ -357,7 +357,7 @@ INSERT INTO `filelampiran_beasiswa` (`nis`, `sktm`, `ktp`, `kk`, `lain`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `guru`
+-- Struktur dari tabel `guru`
 --
 
 CREATE TABLE `guru` (
@@ -409,7 +409,7 @@ CREATE TABLE `guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `guru`
+-- Dumping data untuk tabel `guru`
 --
 
 INSERT INTO `guru` (`NIK`, `Nama_guru`, `nama_pangilan`, `NUPTK`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `status_pegawai`, `jenisPK`, `agama`, `Alamat_jalan`, `RT`, `RW`, `Nama_dusun`, `Desa_kelurahan`, `Kecamatan`, `KodePos`, `Telpon`, `HP`, `email`, `tugas_tambahan`, `SKCPNS`, `tglCPNS`, `SK_pengangkatan`, `TMT_pengangkatan`, `lembaga_pengankatan`, `pangkat_golongan`, `sumbergaji`, `nama_ibu_kandung`, `status_perkawinan`, `nama_suami_atau_istri`, `pekerjaan_suami_istri`, `TMT_PNS`, `lisensiKepsek`, `Diklat_kepengawasan`, `keahlian_brailer`, `keahlian_bahasa_isarat`, `NPWP`, `nama_wajib_pajak`, `kewarganegaraan`, `bank`, `No_rekening`, `atas_nama`, `NIP`, `foto`) VALUES
@@ -427,7 +427,7 @@ INSERT INTO `guru` (`NIK`, `Nama_guru`, `nama_pangilan`, `NUPTK`, `jenis_kelamin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hari`
+-- Struktur dari tabel `hari`
 --
 
 CREATE TABLE `hari` (
@@ -437,7 +437,7 @@ CREATE TABLE `hari` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `hari`
+-- Dumping data untuk tabel `hari`
 --
 
 INSERT INTO `hari` (`id_Hari`, `kode_hari`, `Hari`) VALUES
@@ -450,7 +450,7 @@ INSERT INTO `hari` (`id_Hari`, `kode_hari`, `Hari`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jabatan`
+-- Struktur dari tabel `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -459,7 +459,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jabatan`
+-- Dumping data untuk tabel `jabatan`
 --
 
 INSERT INTO `jabatan` (`idJabatan`, `namaJabatan`) VALUES
@@ -470,7 +470,7 @@ INSERT INTO `jabatan` (`idJabatan`, `namaJabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jadwal`
+-- Struktur dari tabel `jadwal`
 --
 
 CREATE TABLE `jadwal` (
@@ -483,7 +483,7 @@ CREATE TABLE `jadwal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jadwal`
+-- Dumping data untuk tabel `jadwal`
 --
 
 INSERT INTO `jadwal` (`id_jadwal`, `id_kelas`, `id_mapel`, `id_ruangan`, `id_Hari`, `jam`) VALUES
@@ -500,7 +500,7 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_kelas`, `id_mapel`, `id_ruangan`, `id_Har
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jurusan`
+-- Struktur dari tabel `jurusan`
 --
 
 CREATE TABLE `jurusan` (
@@ -512,7 +512,7 @@ CREATE TABLE `jurusan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jurusan`
+-- Dumping data untuk tabel `jurusan`
 --
 
 INSERT INTO `jurusan` (`idJurusan`, `kodeJurusan`, `bs`, `ps`, `kk`) VALUES
@@ -526,7 +526,7 @@ INSERT INTO `jurusan` (`idJurusan`, `kodeJurusan`, `bs`, `ps`, `kk`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kegemaran`
+-- Struktur dari tabel `kegemaran`
 --
 
 CREATE TABLE `kegemaran` (
@@ -540,7 +540,7 @@ CREATE TABLE `kegemaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kegemaran`
+-- Dumping data untuk tabel `kegemaran`
 --
 
 INSERT INTO `kegemaran` (`nis`, `citacita`, `hobi`, `kesenian`, `olahraga`, `organisasi`, `prestasi`) VALUES
@@ -553,7 +553,7 @@ INSERT INTO `kegemaran` (`nis`, `citacita`, `hobi`, `kesenian`, `olahraga`, `org
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -565,7 +565,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kelas`
+-- Dumping data untuk tabel `kelas`
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kode_kelas`, `ThnAjaran`, `kodeJurusan`) VALUES
@@ -585,7 +585,7 @@ INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kode_kelas`, `ThnAjaran`, `kodeJ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketakhirsiswa`
+-- Struktur dari tabel `ketakhirsiswa`
 --
 
 CREATE TABLE `ketakhirsiswa` (
@@ -600,7 +600,7 @@ CREATE TABLE `ketakhirsiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ketakhirsiswa`
+-- Dumping data untuk tabel `ketakhirsiswa`
 --
 
 INSERT INTO `ketakhirsiswa` (`nis`, `tglKeluar`, `alasan`, `noIjazah`, `noSKHUN`, `tglIjazah`, `tglSKHUN`, `tahunLulus`) VALUES
@@ -613,7 +613,7 @@ INSERT INTO `ketakhirsiswa` (`nis`, `tglKeluar`, `alasan`, `noIjazah`, `noSKHUN`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketayah`
+-- Struktur dari tabel `ketayah`
 --
 
 CREATE TABLE `ketayah` (
@@ -633,7 +633,7 @@ CREATE TABLE `ketayah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ketayah`
+-- Dumping data untuk tabel `ketayah`
 --
 
 INSERT INTO `ketayah` (`nis`, `nama`, `agama`, `alamat`, `kewarganegaraan`, `noKTP`, `telepon`, `pekerjaan`, `pendidikan`, `penghasilan`, `tglLahir`, `tmptLahir`, `ketHidup`) VALUES
@@ -646,7 +646,7 @@ INSERT INTO `ketayah` (`nis`, `nama`, `agama`, `alamat`, `kewarganegaraan`, `noK
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketibu`
+-- Struktur dari tabel `ketibu`
 --
 
 CREATE TABLE `ketibu` (
@@ -666,7 +666,7 @@ CREATE TABLE `ketibu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ketibu`
+-- Dumping data untuk tabel `ketibu`
 --
 
 INSERT INTO `ketibu` (`nis`, `nama`, `agama`, `alamat`, `kewarganegaraan`, `noKTP`, `telepon`, `pekerjaan`, `pendidikan`, `penghasilan`, `tglLahir`, `tmptLahir`, `ketHidup`) VALUES
@@ -679,7 +679,7 @@ INSERT INTO `ketibu` (`nis`, `nama`, `agama`, `alamat`, `kewarganegaraan`, `noKT
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketkesehatan`
+-- Struktur dari tabel `ketkesehatan`
 --
 
 CREATE TABLE `ketkesehatan` (
@@ -692,7 +692,7 @@ CREATE TABLE `ketkesehatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ketkesehatan`
+-- Dumping data untuk tabel `ketkesehatan`
 --
 
 INSERT INTO `ketkesehatan` (`nis`, `berat`, `tinggi`, `golDarah`, `kelainan`, `rPenyakit`) VALUES
@@ -705,7 +705,7 @@ INSERT INTO `ketkesehatan` (`nis`, `berat`, `tinggi`, `golDarah`, `kelainan`, `r
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketkompetensi`
+-- Struktur dari tabel `ketkompetensi`
 --
 
 CREATE TABLE `ketkompetensi` (
@@ -716,7 +716,7 @@ CREATE TABLE `ketkompetensi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketlulus`
+-- Struktur dari tabel `ketlulus`
 --
 
 CREATE TABLE `ketlulus` (
@@ -728,7 +728,7 @@ CREATE TABLE `ketlulus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ketlulus`
+-- Dumping data untuk tabel `ketlulus`
 --
 
 INSERT INTO `ketlulus` (`nis`, `kelanjutan`, `namaInstansi`, `penghasilan`, `tglMulai`) VALUES
@@ -741,7 +741,7 @@ INSERT INTO `ketlulus` (`nis`, `kelanjutan`, `namaInstansi`, `penghasilan`, `tgl
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketpindahan`
+-- Struktur dari tabel `ketpindahan`
 --
 
 CREATE TABLE `ketpindahan` (
@@ -751,7 +751,7 @@ CREATE TABLE `ketpindahan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ketpindahan`
+-- Dumping data untuk tabel `ketpindahan`
 --
 
 INSERT INTO `ketpindahan` (`nis`, `alasan`, `dariSekolah`) VALUES
@@ -764,7 +764,7 @@ INSERT INTO `ketpindahan` (`nis`, `alasan`, `dariSekolah`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kettmpttinggal`
+-- Struktur dari tabel `kettmpttinggal`
 --
 
 CREATE TABLE `kettmpttinggal` (
@@ -787,7 +787,7 @@ CREATE TABLE `kettmpttinggal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kettmpttinggal`
+-- Dumping data untuk tabel `kettmpttinggal`
 --
 
 INSERT INTO `kettmpttinggal` (`nis`, `alamat`, `jarak`, `kabupaten`, `kecamatan`, `kelurahan`, `provinsi`, `rt`, `rw`, `tinggalDgn`, `alamatM`, `kecamatanM`, `kabupatenM`, `kondisiRumah`, `kondisiFisik`, `transportasi`) VALUES
@@ -800,7 +800,7 @@ INSERT INTO `kettmpttinggal` (`nis`, `alamat`, `jarak`, `kabupaten`, `kecamatan`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ketwali`
+-- Struktur dari tabel `ketwali`
 --
 
 CREATE TABLE `ketwali` (
@@ -819,7 +819,7 @@ CREATE TABLE `ketwali` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ketwali`
+-- Dumping data untuk tabel `ketwali`
 --
 
 INSERT INTO `ketwali` (`nis`, `nama`, `agama`, `alamat`, `kewarganegaraan`, `noKTP`, `telepon`, `pekerjaan`, `pendidikan`, `penghasilan`, `tglLahir`, `tmptLahir`) VALUES
@@ -832,7 +832,7 @@ INSERT INTO `ketwali` (`nis`, `nama`, `agama`, `alamat`, `kewarganegaraan`, `noK
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kuotajurusan`
+-- Struktur dari tabel `kuotajurusan`
 --
 
 CREATE TABLE `kuotajurusan` (
@@ -842,7 +842,7 @@ CREATE TABLE `kuotajurusan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kuotajurusan`
+-- Dumping data untuk tabel `kuotajurusan`
 --
 
 INSERT INTO `kuotajurusan` (`idKuota`, `kodeJurusan`, `kuota`) VALUES
@@ -857,7 +857,7 @@ INSERT INTO `kuotajurusan` (`idKuota`, `kodeJurusan`, `kuota`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lampiran`
+-- Struktur dari tabel `lampiran`
 --
 
 CREATE TABLE `lampiran` (
@@ -871,7 +871,7 @@ CREATE TABLE `lampiran` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `level`
+-- Struktur dari tabel `level`
 --
 
 CREATE TABLE `level` (
@@ -880,7 +880,7 @@ CREATE TABLE `level` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `level`
+-- Dumping data untuk tabel `level`
 --
 
 INSERT INTO `level` (`idLevel`, `level`) VALUES
@@ -893,7 +893,7 @@ INSERT INTO `level` (`idLevel`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log`
+-- Struktur dari tabel `log`
 --
 
 CREATE TABLE `log` (
@@ -906,7 +906,7 @@ CREATE TABLE `log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `log`
+-- Dumping data untuk tabel `log`
 --
 
 INSERT INTO `log` (`idLog`, `level`, `nik_nis`, `tabel`, `waktu`, `action`) VALUES
@@ -964,7 +964,7 @@ INSERT INTO `log` (`idLog`, `level`, `nik_nis`, `tabel`, `waktu`, `action`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mata_pelajaran`
+-- Struktur dari tabel `mata_pelajaran`
 --
 
 CREATE TABLE `mata_pelajaran` (
@@ -976,7 +976,7 @@ CREATE TABLE `mata_pelajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mata_pelajaran`
+-- Dumping data untuk tabel `mata_pelajaran`
 --
 
 INSERT INTO `mata_pelajaran` (`id_mapel`, `kode_mapel`, `nama_mapel`, `ThnAjaran`, `NIK`) VALUES
@@ -992,7 +992,7 @@ INSERT INTO `mata_pelajaran` (`id_mapel`, `kode_mapel`, `nama_mapel`, `ThnAjaran
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nisn`
+-- Struktur dari tabel `nisn`
 --
 
 CREATE TABLE `nisn` (
@@ -1002,7 +1002,7 @@ CREATE TABLE `nisn` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notifikasi_beasiswa`
+-- Struktur dari tabel `notifikasi_beasiswa`
 --
 
 CREATE TABLE `notifikasi_beasiswa` (
@@ -1012,7 +1012,7 @@ CREATE TABLE `notifikasi_beasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `notifikasi_beasiswa`
+-- Dumping data untuk tabel `notifikasi_beasiswa`
 --
 
 INSERT INTO `notifikasi_beasiswa` (`idNotif`, `idBeasiswa`, `status`) VALUES
@@ -1021,7 +1021,7 @@ INSERT INTO `notifikasi_beasiswa` (`idNotif`, `idBeasiswa`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendaftaran`
+-- Struktur dari tabel `pendaftaran`
 --
 
 CREATE TABLE `pendaftaran` (
@@ -1048,7 +1048,7 @@ CREATE TABLE `pendaftaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pendaftaran`
+-- Dumping data untuk tabel `pendaftaran`
 --
 
 INSERT INTO `pendaftaran` (`idPendaftaran`, `nisn`, `nama`, `jk`, `email`, `tglLahir`, `tempatLahir`, `alamat`, `kecamatan`, `kabupaten`, `telepon`, `agama`, `sekolahAsal`, `noPesertaSLTP`, `jurusan`, `nilaiUN`, `nilaiRapot`, `nilaiSeleksi`, `status`, `privilage`) VALUES
@@ -1058,7 +1058,7 @@ INSERT INTO `pendaftaran` (`idPendaftaran`, `nisn`, `nama`, `jk`, `email`, `tglL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendataan`
+-- Struktur dari tabel `pendataan`
 --
 
 CREATE TABLE `pendataan` (
@@ -1076,7 +1076,7 @@ CREATE TABLE `pendataan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pendataan`
+-- Dumping data untuk tabel `pendataan`
 --
 
 INSERT INTO `pendataan` (`idPendataan`, `nisn`, `nama`, `asalSekolah`, `jk`, `alamat`, `tempatLahir`, `tglLahir`, `pekerjaan`, `jurusan`, `thnAjaran`) VALUES
@@ -1085,7 +1085,7 @@ INSERT INTO `pendataan` (`idPendataan`, `nisn`, `nama`, `asalSekolah`, `jk`, `al
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengajuan`
+-- Struktur dari tabel `pengajuan`
 --
 
 CREATE TABLE `pengajuan` (
@@ -1107,7 +1107,7 @@ CREATE TABLE `pengajuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pengajuan`
+-- Dumping data untuk tabel `pengajuan`
 --
 
 INSERT INTO `pengajuan` (`idBea`, `namaWali`, `alamatWali`, `noHPWali`, `pekerjaanWali`, `penghasilanWali`, `namaSiswa`, `nis`, `psCode`, `pengajuanSpp`, `pengajuanSbpp`, `waktu`, `thnAjaran`, `kelas`, `idPeriode`) VALUES
@@ -1115,7 +1115,7 @@ INSERT INTO `pengajuan` (`idBea`, `namaWali`, `alamatWali`, `noHPWali`, `pekerja
 ('BEASISWA KARSA - 1818051053', 'bismillah', 'bismillah', 'bismillah', 'bismillah', 'bismillah', 'Mohammad Salah', '1818051053', 'AKOMODASI PERHOTELAN', '200000', '1000000', 'Friday,01-Jun-2018 (12:05 PM)', '2018', 'bismillah', 1);
 
 --
--- Triggers `pengajuan`
+-- Trigger `pengajuan`
 --
 DELIMITER $$
 CREATE TRIGGER `delete_file_lampiran_pengajuan_beasiswa` AFTER DELETE ON `pengajuan` FOR EACH ROW DELETE FROM filelampiran_beasiswa WHERE nis = OLD.nis
@@ -1125,7 +1125,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penilaian_beasiswa`
+-- Struktur dari tabel `penilaian_beasiswa`
 --
 
 CREATE TABLE `penilaian_beasiswa` (
@@ -1139,7 +1139,7 @@ CREATE TABLE `penilaian_beasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penilaian_beasiswa`
+-- Dumping data untuk tabel `penilaian_beasiswa`
 --
 
 INSERT INTO `penilaian_beasiswa` (`idPenilaianBea`, `idBeasiswa`, `nis`, `nilai`, `survey`, `totalKelayakan`, `kategori`) VALUES
@@ -1148,7 +1148,7 @@ INSERT INTO `penilaian_beasiswa` (`idPenilaianBea`, `idBeasiswa`, `nis`, `nilai`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `periode_beasiswa`
+-- Struktur dari tabel `periode_beasiswa`
 --
 
 CREATE TABLE `periode_beasiswa` (
@@ -1158,7 +1158,7 @@ CREATE TABLE `periode_beasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `periode_beasiswa`
+-- Dumping data untuk tabel `periode_beasiswa`
 --
 
 INSERT INTO `periode_beasiswa` (`idPeriode`, `mulai`, `hingga`) VALUES
@@ -1167,7 +1167,7 @@ INSERT INTO `periode_beasiswa` (`idPeriode`, `mulai`, `hingga`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rpendidikan`
+-- Struktur dari tabel `rpendidikan`
 --
 
 CREATE TABLE `rpendidikan` (
@@ -1182,7 +1182,7 @@ CREATE TABLE `rpendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rpendidikan`
+-- Dumping data untuk tabel `rpendidikan`
 --
 
 INSERT INTO `rpendidikan` (`nis`, `tamatanDari`, `lamaBelajar`, `noPesertaUAN`, `noIjazah`, `noSKHUN`, `tglIjazah`, `tglSKHUN`) VALUES
@@ -1195,7 +1195,7 @@ INSERT INTO `rpendidikan` (`nis`, `tamatanDari`, `lamaBelajar`, `noPesertaUAN`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ruangan`
+-- Struktur dari tabel `ruangan`
 --
 
 CREATE TABLE `ruangan` (
@@ -1206,7 +1206,7 @@ CREATE TABLE `ruangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ruangan`
+-- Dumping data untuk tabel `ruangan`
 --
 
 INSERT INTO `ruangan` (`id_ruangan`, `kode_ruangan`, `nama_ruangan`, `ThnAjaran`) VALUES
@@ -1220,7 +1220,7 @@ INSERT INTO `ruangan` (`id_ruangan`, `kode_ruangan`, `nama_ruangan`, `ThnAjaran`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa`
+-- Struktur dari tabel `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -1251,7 +1251,7 @@ CREATE TABLE `siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `siswa`
+-- Dumping data untuk tabel `siswa`
 --
 
 INSERT INTO `siswa` (`nis`, `nisn`, `namaSiswa`, `namaPanggilan`, `jk`, `tempatLahir`, `tanggalLahir`, `agama`, `email`, `hp`, `telepon`, `pass`, `anakKe`, `bahasa`, `jenisAnak`, `jsa`, `jsk`, `jst`, `kewarganegaraan`, `kodeJurusan`, `thnAjaran`, `status`, `id_kelas`, `idPeriode`) VALUES
@@ -1263,7 +1263,7 @@ INSERT INTO `siswa` (`nis`, `nisn`, `namaSiswa`, `namaPanggilan`, `jk`, `tempatL
 ('1233213', '3345321', 'ALIF LATHIFATUL', 'ALIF', 'P', '', '0000-00-00', '', '', '', '', '', 0, '', '', 0, 0, 0, '', 'TKJ', '2017/2018', 0, 1, NULL),
 ('1234212', '3345564', 'DONI SITANGGANG', 'DONI', 'L', '', '0000-00-00', '', '', '', '', '', 0, '', '', 0, 0, 0, '', 'AP', '2017/2018', 0, 0, NULL),
 ('1531409', '1234567895', 'harendra riski', 'riski', 'L', 'tulungagung', '2018-07-26', 'islam', 'alfian@gmail.com', '082245111', '11123', '453', 2, 'jawa', 'kandung', 1, 1, 1, 'indo', 'TKJ', '2011', 0, 1, 1),
-('1818051051', '1234567896', 'Bagus Yekti Widodo', 'bagus', 'L', 'Tulungagung', '2000-09-27', 'Islam', 'bagus5520@gmail.com', '083841783960', '08912312313', 'ijT7QNYl7L', 0, 'Jawa', 'Kandung', 0, 0, 0, 'indonesia', 'KPR', '2018/2019', 0, 0, 1),
+('1531409', '1234567896', 'Bagus Yekti Widodo', 'bagus', 'L', 'Tulungagung', '2000-09-27', 'Islam', 'bagus5520@gmail.com', '083841783960', '08912312313', 'ijT7QNYl7L', 0, 'Jawa', 'Kandung', 0, 0, 0, 'indonesia', 'KPR', '2018/2019', 0, 0, 1),
 ('1824050855', '1234567892', 'Faisal', '', 'L', 'Malang', '2000-01-30', '', '', '', '7918739187', 'eaHRY6kScB', 0, '', '', 0, 0, 0, '', 'UPW', '', 0, 1, 1),
 ('1824051231', '1234567893', 'Abid ', '', 'L', 'Malang', '2000-01-04', '', '', '', '08923123123', 'oFYiF0v2If', 0, '', '', 0, 0, 0, '', 'JSB', '', 0, 0, 1),
 ('1824051237', '1234567896', 'Bagus Yekti Widodo', '', 'L', 'Tulungagung', '2000-09-27', '', '', '', '08912312313', 'doqIZumfO0', 0, '', '', 0, 0, 0, '', 'PS', '', 0, 0, 1),
@@ -1287,7 +1287,60 @@ INSERT INTO `siswa` (`nis`, `nisn`, `namaSiswa`, `namaPanggilan`, `jk`, `tempatL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `thnajaran`
+-- Struktur dari tabel `tbl_jurnalprakerin`
+--
+
+CREATE TABLE `tbl_jurnalprakerin` (
+  `id_jurnalprakerin` int(11) NOT NULL,
+  `id_siswa_prakerin` int(11) NOT NULL,
+  `jurnal` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_jurnalprakerin`
+--
+
+INSERT INTO `tbl_jurnalprakerin` (`id_jurnalprakerin`, `id_siswa_prakerin`, `jurnal`) VALUES
+(5, 3147, '1551666838.pdf'),
+(6, 3148, '1551666970.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_nilaiprakerin`
+--
+
+CREATE TABLE `tbl_nilaiprakerin` (
+  `id_nilaiprakerin` int(11) NOT NULL,
+  `id_siswa_prakerin` int(11) NOT NULL,
+  `at1` int(11) DEFAULT NULL,
+  `at2` int(11) DEFAULT NULL,
+  `at3` int(11) DEFAULT NULL,
+  `at4` int(11) DEFAULT NULL,
+  `ant1` int(11) DEFAULT NULL,
+  `ant2` int(11) DEFAULT NULL,
+  `ant3` int(11) DEFAULT NULL,
+  `ant4` int(11) DEFAULT NULL,
+  `ant5` int(11) DEFAULT NULL,
+  `ant6` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_nilaiprakerin`
+--
+
+INSERT INTO `tbl_nilaiprakerin` (`id_nilaiprakerin`, `id_siswa_prakerin`, `at1`, `at2`, `at3`, `at4`, `ant1`, `ant2`, `ant3`, `ant4`, `ant5`, `ant6`) VALUES
+(3144, 3143, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0),
+(3145, 3144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(3146, 3145, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(3147, 3146, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(3148, 3147, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(3149, 3148, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `thnajaran`
 --
 
 CREATE TABLE `thnajaran` (
@@ -1297,7 +1350,7 @@ CREATE TABLE `thnajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `thnajaran`
+-- Dumping data untuk tabel `thnajaran`
 --
 
 INSERT INTO `thnajaran` (`idThnAjaran`, `thnAjaran`, `semester`) VALUES
@@ -1309,7 +1362,7 @@ INSERT INTO `thnajaran` (`idThnAjaran`, `thnAjaran`, `semester`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_absensi`
+-- Struktur dari tabel `t_absensi`
 --
 
 CREATE TABLE `t_absensi` (
@@ -1327,7 +1380,7 @@ CREATE TABLE `t_absensi` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_absensi`
+-- Dumping data untuk tabel `t_absensi`
 --
 
 INSERT INTO `t_absensi` (`idabsen`, `no_induk`, `stabsen`, `tglabsen`, `terlambat`, `Datang`, `Pulang`, `Alasan`, `GuruPiket`, `kelas`, `id_kelas`) VALUES
@@ -1402,7 +1455,7 @@ INSERT INTO `t_absensi` (`idabsen`, `no_induk`, `stabsen`, `tglabsen`, `terlamba
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_beasiswa`
+-- Struktur dari tabel `t_beasiswa`
 --
 
 CREATE TABLE `t_beasiswa` (
@@ -1430,7 +1483,7 @@ CREATE TABLE `t_beasiswa` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Dumping data for table `t_beasiswa`
+-- Dumping data untuk tabel `t_beasiswa`
 --
 
 INSERT INTO `t_beasiswa` (`idbeasiswa`, `nis`, `nama`, `tglsurvey`, `kelas`, `OrTu`, `Alamat`, `Surveyor`, `Kerja`, `Gaji`, `Rumah`, `Bangunan`, `Lantai`, `Ruangan`, `Listrik`, `Motor`, `TV`, `HP`, `Survey`, `Total`, `ThAjar`) VALUES
@@ -1440,7 +1493,7 @@ INSERT INTO `t_beasiswa` (`idbeasiswa`, `nis`, `nama`, `tglsurvey`, `kelas`, `Or
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_belajar`
+-- Struktur dari tabel `t_belajar`
 --
 
 CREATE TABLE `t_belajar` (
@@ -1456,7 +1509,7 @@ CREATE TABLE `t_belajar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `t_belajar`
+-- Dumping data untuk tabel `t_belajar`
 --
 
 INSERT INTO `t_belajar` (`idbelajar`, `thajar`, `sem`, `pelajaran`, `nip`, `tglawal`, `tglakhir`, `status`, `ket`) VALUES
@@ -1466,7 +1519,7 @@ INSERT INTO `t_belajar` (`idbelajar`, `thajar`, `sem`, `pelajaran`, `nip`, `tgla
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_jurnal`
+-- Struktur dari tabel `t_jurnal`
 --
 
 CREATE TABLE `t_jurnal` (
@@ -1485,7 +1538,7 @@ CREATE TABLE `t_jurnal` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_jurnal`
+-- Dumping data untuk tabel `t_jurnal`
 --
 
 INSERT INTO `t_jurnal` (`id_jurnal`, `userid`, `thajar`, `nama`, `hari`, `tgl`, `kelas`, `jam_mulai`, `jam_selesai`, `kegiatan`, `sdh_blm`, `ket`) VALUES
@@ -1498,7 +1551,7 @@ INSERT INTO `t_jurnal` (`id_jurnal`, `userid`, `thajar`, `nama`, `hari`, `tgl`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_kelas`
+-- Struktur dari tabel `t_kelas`
 --
 
 CREATE TABLE `t_kelas` (
@@ -1516,7 +1569,7 @@ CREATE TABLE `t_kelas` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_kelas`
+-- Dumping data untuk tabel `t_kelas`
 --
 
 INSERT INTO `t_kelas` (`id_kelas`, `kelas`, `nip`, `tingkat`, `program`, `ruang`, `ketua`, `masuk`, `guru_bk`, `th_ajar`, `profil`) VALUES
@@ -1527,7 +1580,7 @@ INSERT INTO `t_kelas` (`id_kelas`, `kelas`, `nip`, `tingkat`, `program`, `ruang`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_member`
+-- Struktur dari tabel `t_member`
 --
 
 CREATE TABLE `t_member` (
@@ -1571,7 +1624,7 @@ CREATE TABLE `t_member` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_member`
+-- Dumping data untuk tabel `t_member`
 --
 
 INSERT INTO `t_member` (`userid`, `nama`, `tgllahir`, `kelamin`, `kerja`, `alamat`, `negara`, `telp`, `sekolah`, `homepage`, `profil`, `username`, `password`, `email`, `pengingat`, `jawaban`, `kategori`, `status`, `tgl_login`, `nis`, `id_nominasi`, `kelas`, `ket`, `stblog`, `kunjungblog`, `point`, `editor`, `stlogin`, `totlogin`, `ip`, `stprofil`, `setfacebook`, `akses`, `pelanggaran`, `mclass`, `bg_cover`, `bg_profile`) VALUES
@@ -1581,7 +1634,7 @@ INSERT INTO `t_member` (`userid`, `nama`, `tgllahir`, `kelamin`, `kerja`, `alama
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_mengajar`
+-- Struktur dari tabel `t_mengajar`
 --
 
 CREATE TABLE `t_mengajar` (
@@ -1603,7 +1656,7 @@ CREATE TABLE `t_mengajar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_mengajar`
+-- Dumping data untuk tabel `t_mengajar`
 --
 
 INSERT INTO `t_mengajar` (`idajar`, `nip`, `nama`, `kelas`, `pel`, `program`, `jampel`, `sem`, `th_ajar`, `agama`, `hari`, `jam_ke`, `jam_pel`, `ruang`, `tgl_update`) VALUES
@@ -1612,7 +1665,7 @@ INSERT INTO `t_mengajar` (`idajar`, `nip`, `nama`, `kelas`, `pel`, `program`, `j
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_prakerin`
+-- Struktur dari tabel `t_prakerin`
 --
 
 CREATE TABLE `t_prakerin` (
@@ -1630,49 +1683,43 @@ CREATE TABLE `t_prakerin` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_prakerin`
+-- Dumping data untuk tabel `t_prakerin`
 --
 
 INSERT INTO `t_prakerin` (`id_tmp_prakerin`, `nama_prakerin`, `alamat_prakerin`, `telp_prakerin`, `kota_prakerin`, `program`, `pembimbing`, `direktur`, `email`, `website`, `th_ajar`) VALUES
-(180, 'ubb ', 'Jalan Idjen 18', '46436436', 'Malang', 'Web', 'qrqrq2', 'Santoso', 'titaniafaudiafifah1998@gmail.com', 'www.bagas31.com', '2018/2019'),
-(181, 'ubb web', 'Jalan Soekarno Hatta', '46436436', 'Malang', 'Web', 'Santo', 'afafw', 'soripin18@gmail.com', 'ubb.ac.id', '2018/2019');
+(180, 'Visionet', 'Araya Malang', '2040123098', 'Malang', 'Web', 'Tresno', 'Kulino', 'titaniafaudiafifah1998@gmail.com', 'titaniafaudiafifah1998@gmail.com', 'visio.net'),
+(181, 'EDII', 'Jalan Soekarno Hatta', '46436436', 'Surabaya', 'Web', 'Santo', 'afafw', 'soripin18@gmail.com', 'soripin18@gmail.com', 'soripin18@gmail.com'),
+(183, 'DOT', 'Jl. Malang 9021', '08293102398', 'Malang', 'Web', 'Sutres', 'Sarwono', 'dot@aw', 'dot@aw', 'dot.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_prakerin_siswa`
+-- Struktur dari tabel `t_prakerin_siswa`
 --
 
 CREATE TABLE `t_prakerin_siswa` (
   `id_siswa_prakerin` int(10) NOT NULL,
   `id_tmp_prakerin` int(10) DEFAULT NULL,
-  `id_pembimbing` int(10) DEFAULT NULL,
-  `no_induk` varchar(10) COLLATE latin1_general_ci DEFAULT NULL,
-  `nama_prakerin` varchar(100) COLLATE latin1_general_ci DEFAULT NULL,
-  `alamat_prakerin` varchar(100) COLLATE latin1_general_ci DEFAULT NULL,
-  `pembimbing` varchar(100) COLLATE latin1_general_ci DEFAULT NULL,
-  `nip` varchar(30) COLLATE latin1_general_ci NOT NULL,
+  `nis` int(11) DEFAULT NULL,
   `lama_bln` int(10) DEFAULT NULL,
   `tgl_start` date DEFAULT NULL,
   `tgl_akhir` date DEFAULT NULL,
-  `tapel` varchar(10) COLLATE latin1_general_ci DEFAULT NULL,
   `kelas` varchar(10) COLLATE latin1_general_ci DEFAULT NULL,
-  `prakerinke` int(1) DEFAULT NULL,
-  `program` varchar(50) COLLATE latin1_general_ci DEFAULT NULL
+  `prakerinke` int(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_prakerin_siswa`
+-- Dumping data untuk tabel `t_prakerin_siswa`
 --
 
-INSERT INTO `t_prakerin_siswa` (`id_siswa_prakerin`, `id_tmp_prakerin`, `id_pembimbing`, `no_induk`, `nama_prakerin`, `alamat_prakerin`, `pembimbing`, `nip`, `lama_bln`, `tgl_start`, `tgl_akhir`, `tapel`, `kelas`, `prakerinke`, `program`) VALUES
-(12, 1321412, 6, '214214', 'UBB', 'JALAN SOEKARNO HATTA', 'RUDI ', '21124213', 5, '2019-01-10', '2019-01-17', '2018/2019', '2', 2, 'WEB'),
-(3124, 132141221, 4, '214124', 'UBIG', 'JALAN KALPATARU NO.17', 'SANTOSO', '24215', 5, '2019-01-07', '2019-01-29', '2018/2019', '2', 2, 'WEB');
+INSERT INTO `t_prakerin_siswa` (`id_siswa_prakerin`, `id_tmp_prakerin`, `nis`, `lama_bln`, `tgl_start`, `tgl_akhir`, `kelas`, `prakerinke`) VALUES
+(3147, 180, 2221322, 2, '2019-03-08', '2019-03-19', '1', 1),
+(3148, 183, 44453111, 2, '2019-03-22', '2019-03-31', '2', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_programahli`
+-- Struktur dari tabel `t_programahli`
 --
 
 CREATE TABLE `t_programahli` (
@@ -1692,7 +1739,7 @@ CREATE TABLE `t_programahli` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_programahli`
+-- Dumping data untuk tabel `t_programahli`
 --
 
 INSERT INTO `t_programahli` (`idprog`, `program`, `program_lngkap`, `bidangstudi`, `programstudi`, `kompetensi`, `kode`, `th_ajar`, `bidangahli`, `programahli`, `paketahli`, `nama`, `tanggal_update`) VALUES
@@ -1702,7 +1749,7 @@ INSERT INTO `t_programahli` (`idprog`, `program`, `program_lngkap`, `bidangstudi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_raport2`
+-- Struktur dari tabel `t_raport2`
 --
 
 CREATE TABLE `t_raport2` (
@@ -1768,7 +1815,7 @@ CREATE TABLE `t_raport2` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_ruang`
+-- Struktur dari tabel `t_ruang`
 --
 
 CREATE TABLE `t_ruang` (
@@ -1783,7 +1830,7 @@ CREATE TABLE `t_ruang` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_ruang`
+-- Dumping data untuk tabel `t_ruang`
 --
 
 INSERT INTO `t_ruang` (`id`, `kode`, `nama`, `gedung`, `penanggung_jawab`, `jenis`, `profil`, `thajar`) VALUES
@@ -1793,7 +1840,7 @@ INSERT INTO `t_ruang` (`id`, `kode`, `nama`, `gedung`, `penanggung_jawab`, `jeni
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_siswa`
+-- Struktur dari tabel `t_siswa`
 --
 
 CREATE TABLE `t_siswa` (
@@ -1939,7 +1986,7 @@ CREATE TABLE `t_siswa` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_siswa`
+-- Dumping data untuk tabel `t_siswa`
 --
 
 INSERT INTO `t_siswa` (`user_id`, `no_induk`, `sis_email`, `nama`, `sis_nma_pnggln`, `kelamin`, `tmp_lahir`, `tgl_lahir`, `agama`, `sis_kwarganegraan`, `sis_anak_ke`, `sis_jml_sdr_kndung`, `sis_jml_sdr_tiri`, `sis_jml_sdr_angkat`, `sis_status`, `sis_bhs_shari_hri`, `alat_transport`, `sis_kps`, `sis_kip`, `sis_nokk`, `sis_nik`, `alamat_tinggal`, `alamat_kec_tngl`, `alamat_kab_tngl`, `sis_jrak_ke_skul`, `sis_tggal_dgn`, `telp`, `rumah_kondisi`, `rumah_fisik`, `alamat`, `alamat_rt`, `alamat_rw`, `alamat_lurah`, `alamat_camat`, `alamat_kodya`, `alamat_prop`, `sis_tmt_dri`, `sttb`, `sttb_tgl`, `nem`, `nem_tgl`, `sis_lma_blajar`, `sis_no_psrta_unas`, `sis_dtrm_kelas`, `sis_dtrm_bdng_khlian`, `sis_dtrm_komp_khlian`, `sis_dtrm_tgl`, `ayah`, `ayah_ktp`, `ayh_tmpt_lhir`, `ayh_tgl_lhir`, `ayh_agama`, `ayh_kwarganegraan`, `ayh_pndidikan`, `ayh_pkrjaan`, `ayh_pnghasilan_bln`, `ayh_almat`, `ayh_tlp`, `ayh_status`, `ibu`, `ibu_ktp`, `ibu_tmpt_lhir`, `ibu_tgl_lhir`, `ibu_agama`, `ibu_kwarganegraan`, `ibu_pndidikan`, `ibu_pkrjaan`, `ibu_pnghasilan_bln`, `ibu_almat`, `ibu_tlp`, `ibu_status`, `wali`, `wali_ktp`, `wali_tmpt_lhir`, `wali_tgl_lhir`, `wali_agama`, `wali_kwarganegraan`, `wali_pndidikan`, `wali_pkrjaan`, `wali_pnghasilan_bln`, `wali_almat`, `wali_tlp`, `hub_wali_siswa`, `sis_gol_darah`, `sis_penyakit`, `sis_kel_jasmani`, `sis_tinggi_berat`, `sis_ksenian`, `sis_olahrga`, `sis_kmasyaraktn`, `sis_organisasi`, `sis_hobby`, `prestasi`, `sis_lain2`, `no_daftar`, `th_ajar`, `kode_prog`, `no_urut`, `ind_prog`, `kelas`, `tgl_input`, `sis_pndahn_seklah`, `sis_pndahn_alasan`, `sis_dtrm_prog_khlian`, `sis_cita2`, `sis_kks`, `sis_beasiswa`, `sis_pndah_seklah`, `sis_pndah_alsn`, `sis_luls_thn`, `sis_lnjut_ke`, `sis_krja_tgl`, `sis_krja_tmpt`, `sis_krja_pnghsilan`, `ijz_fc_lg`, `ijz_fc_bs`, `skhun_fc_lg`, `skhun_fc_bs`, `kk`, `akte`, `alat_tansport`, `n_unas`, `no_unas`, `n_raport`, `n_test`, `n_minat`, `n_akhir`, `p_unas`, `p_raport`, `p_test`, `p_minat`, `p_akhir`, `sis_luls_ijazah`, `sis_luls_skhu`, `th_daftar`, `petugas`, `foto_daftar`, `sis_nisn`, `status`) VALUES
@@ -1955,7 +2002,7 @@ INSERT INTO `t_siswa` (`user_id`, `no_induk`, `sis_email`, `nama`, `sis_nma_pngg
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_siswadaftar`
+-- Struktur dari tabel `t_siswadaftar`
 --
 
 CREATE TABLE `t_siswadaftar` (
@@ -1984,7 +2031,7 @@ CREATE TABLE `t_siswadaftar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_siswadaftar`
+-- Dumping data untuk tabel `t_siswadaftar`
 --
 
 INSERT INTO `t_siswadaftar` (`user_id`, `no_induk`, `sis_email`, `kelamin`, `nama`, `tmp_lahir`, `tgl_lahir`, `alamat`, `alamat_camat`, `alamat_kodya`, `ayh_tlp`, `agama`, `sis_no_psrta_unas`, `sis_tmt_dri`, `sis_ksenian`, `n_unas`, `n_raport`, `sis_dtrm_prog_khlian`, `th_ajar`, `no_daftar`, `n_test`, `status`) VALUES
@@ -1995,7 +2042,7 @@ INSERT INTO `t_siswadaftar` (`user_id`, `no_induk`, `sis_email`, `kelamin`, `nam
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_sis_thajar`
+-- Struktur dari tabel `t_sis_thajar`
 --
 
 CREATE TABLE `t_sis_thajar` (
@@ -2012,7 +2059,7 @@ CREATE TABLE `t_sis_thajar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_sis_thajar`
+-- Dumping data untuk tabel `t_sis_thajar`
 --
 
 INSERT INTO `t_sis_thajar` (`id_sis_th`, `no_urut`, `no_induk`, `nama`, `kelas`, `prog`, `th_ajar`, `kelamin`, `agama`, `Inklusi`) VALUES
@@ -2023,7 +2070,7 @@ INSERT INTO `t_sis_thajar` (`id_sis_th`, `no_urut`, `no_induk`, `nama`, `kelas`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_staf`
+-- Struktur dari tabel `t_staf`
 --
 
 CREATE TABLE `t_staf` (
@@ -2072,7 +2119,7 @@ CREATE TABLE `t_staf` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `t_staf`
+-- Dumping data untuk tabel `t_staf`
 --
 
 INSERT INTO `t_staf` (`user_id`, `nama`, `nip`, `kelamin`, `alamat`, `tugas`, `telp`, `hp`, `email`, `pelajaran`, `tgl_lahir`, `tmp_lahir`, `kode`, `pangkat`, `kategori`, `profilstaf`, `th_ajar`, `no_induk_baru`, `depan_gelar`, `belakang_gelar`, `nama_ibu_kandung`, `kode_pos`, `golongan_darah`, `kelurahan`, `kecamatan`, `provinsi`, `daerah`, `status_nikah`, `tanggal_masuk`, `jenis_pegawai`, `sertifikasi_guru`, `tmt_pns`, `akses`, `arsip`, `tugas_tambahan`, `pangkat_pns`, `jabatan_pns`, `golongan_pns`, `pendidikan_terahir`, `prog_diampu`, `masakerja_th`, `masakerja_bl`) VALUES
@@ -2081,7 +2128,7 @@ INSERT INTO `t_staf` (`user_id`, `nama`, `nip`, `kelamin`, `alamat`, `tugas`, `t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_thajar`
+-- Struktur dari tabel `t_thajar`
 --
 
 CREATE TABLE `t_thajar` (
@@ -2100,7 +2147,7 @@ CREATE TABLE `t_thajar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data for table `t_thajar`
+-- Dumping data untuk tabel `t_thajar`
 --
 
 INSERT INTO `t_thajar` (`idthajar`, `thajar`, `KepSekNama`, `KepSekPangkat`, `KepSekNip`, `TglRaportGanjil`, `TglRaportGenap`, `TglUKK`, `Catatan UKK`, `Tahun`, `TglPKG`, `JenisUKK`) VALUES
@@ -2110,7 +2157,7 @@ INSERT INTO `t_thajar` (`idthajar`, `thajar`, `KepSekNama`, `KepSekPangkat`, `Ke
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -2125,7 +2172,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`idUser`, `nis`, `NIK`, `username`, `password`, `passwordHint`, `idJabatan`, `idLevel`) VALUES
@@ -2373,6 +2420,20 @@ ALTER TABLE `siswa`
   ADD KEY `id_kelas` (`id_kelas`);
 
 --
+-- Indexes for table `tbl_jurnalprakerin`
+--
+ALTER TABLE `tbl_jurnalprakerin`
+  ADD PRIMARY KEY (`id_jurnalprakerin`),
+  ADD KEY `id_siswa_prakerin` (`id_siswa_prakerin`);
+
+--
+-- Indexes for table `tbl_nilaiprakerin`
+--
+ALTER TABLE `tbl_nilaiprakerin`
+  ADD PRIMARY KEY (`id_nilaiprakerin`),
+  ADD KEY `id_siswa_prakerin` (`id_siswa_prakerin`);
+
+--
 -- Indexes for table `thnajaran`
 --
 ALTER TABLE `thnajaran`
@@ -2436,7 +2497,9 @@ ALTER TABLE `t_prakerin`
 -- Indexes for table `t_prakerin_siswa`
 --
 ALTER TABLE `t_prakerin_siswa`
-  ADD PRIMARY KEY (`id_siswa_prakerin`);
+  ADD PRIMARY KEY (`id_siswa_prakerin`),
+  ADD KEY `id_tmp_prakerin` (`id_tmp_prakerin`),
+  ADD KEY `id_pembimbing` (`nis`);
 
 --
 -- Indexes for table `t_programahli`
@@ -2511,6 +2574,18 @@ ALTER TABLE `absensi`
   MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
+-- AUTO_INCREMENT for table `tbl_jurnalprakerin`
+--
+ALTER TABLE `tbl_jurnalprakerin`
+  MODIFY `id_jurnalprakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_nilaiprakerin`
+--
+ALTER TABLE `tbl_nilaiprakerin`
+  MODIFY `id_nilaiprakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3150;
+
+--
 -- AUTO_INCREMENT for table `t_beasiswa`
 --
 ALTER TABLE `t_beasiswa`
@@ -2520,7 +2595,13 @@ ALTER TABLE `t_beasiswa`
 -- AUTO_INCREMENT for table `t_prakerin`
 --
 ALTER TABLE `t_prakerin`
-  MODIFY `id_tmp_prakerin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
+  MODIFY `id_tmp_prakerin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
+
+--
+-- AUTO_INCREMENT for table `t_prakerin_siswa`
+--
+ALTER TABLE `t_prakerin_siswa`
+  MODIFY `id_siswa_prakerin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3149;
 
 --
 -- AUTO_INCREMENT for table `t_raport2`

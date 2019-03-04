@@ -30,6 +30,10 @@ $object = new t_prakerin();
                   <div class="col-md-12">
                     <div class="card">
                         <div class="card-footer">
+                          <a href="#"><button title="export data berupa excel" type="submit" class="btn btn-success btn-sm">
+                            <i class="fa ti-upload"></i> Cetak
+                          </button>
+                          </a>
                           <a href="tambah_perusahaan.php"><button title="Tambahkan surat masuk" type="submit" class="btn btn-primary btn-sm"><i class="fa ti-import"></i> Tambah Data Perusahaan
                           </button> </a>
                           <!-- <a href="surat_keluar.html"><button title="Tambahkan surat keluar" type="reset" class="btn btn-danger btn-sm"><i class="fa ti-export"></i> Tambah Surat Keluar
