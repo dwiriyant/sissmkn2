@@ -9,7 +9,7 @@ $object = new tbl_nilaiprakerin();
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Data Guru</h1>
+                        <h1>Data Nilai Prakerin</h1>
                     </div>
                 </div>
             </div>
@@ -29,14 +29,8 @@ $object = new tbl_nilaiprakerin();
                 <div class="row">
                   <div class="col-md-12">
                     <div class="card">
-                        <div class="card-footer">
-                          <a href="#"><button title="export data berupa excel" type="submit" class="btn btn-success btn-sm">
-                            <i class="fa ti-upload"></i> Cetak
-                          </button>
-                          </a>
-                        </div>
                         <div class="card-header">
-                            <strong class="card-title">List </strong> Data Prakerin
+                            <strong class="card-title">List </strong> Data Nilai Prakerin
                         </div>
                         <div class="card-body">
                           <table id="coba" class="table table-striped table-bordered">
@@ -63,6 +57,7 @@ $object = new tbl_nilaiprakerin();
                                       <a href="detail_nilaiprakerin.php?id_nilaiprakerin=<?=$data['id_nilaiprakerin']; ?> &aksi=update"><button title="Detail" type="button" class="btn btn-primary btn-sm"><i class="fa ti-eye"></i></button></a>
                                       <a href="edit_nilaiprakerin.php?id_nilaiprakerin=<?=$data['id_nilaiprakerin']; ?> &aksi=update"><button title="update" type="button" class="btn btn-success btn-sm"><i class="fa ti-pencil-alt"></i></button></a>
                                       <a href="proses_nilaiprakerin.php?id_nilaiprakerin=<?=$data['id_nilaiprakerin']; ?> &aksi=hapus"><button title="Hapus" type="button" class="btn btn-danger btn-sm"><i class="fa ti-eraser"></i></button></a>
+                                      <a href="cetak_nilaiprakerin.php?id_nilaiprakerin=<?=$data['id_nilaiprakerin']; ?>" target="_blank"><button title="cetak" type="button" class="btn btn-warning btn-sm">Cetak Nilai</button></a>
                                       </td>
                                 </tr>
                                 <?php } ?>
