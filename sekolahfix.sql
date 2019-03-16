@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Mar 2019 pada 03.39
+-- Generation Time: 16 Mar 2019 pada 12.31
 -- Versi Server: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -1330,12 +1330,8 @@ CREATE TABLE `tbl_nilaiprakerin` (
 --
 
 INSERT INTO `tbl_nilaiprakerin` (`id_nilaiprakerin`, `id_siswa_prakerin`, `at1`, `at2`, `at3`, `at4`, `ant1`, `ant2`, `ant3`, `ant4`, `ant5`, `ant6`) VALUES
-(3144, 3143, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0),
-(3145, 3144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(3146, 3145, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(3147, 3146, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(3148, 3147, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(3149, 3148, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(3148, 3147, 90, 90, 90, 80, 80, 70, 78, 90, 79, 85),
+(3149, 3148, 89, 78, 80, 70, 90, 98, 68, 80, 75, 65);
 
 -- --------------------------------------------------------
 
@@ -1687,9 +1683,9 @@ CREATE TABLE `t_prakerin` (
 --
 
 INSERT INTO `t_prakerin` (`id_tmp_prakerin`, `nama_prakerin`, `alamat_prakerin`, `telp_prakerin`, `kota_prakerin`, `program`, `pembimbing`, `direktur`, `email`, `website`, `th_ajar`) VALUES
-(180, 'Visionet', 'Araya Malang', '2040123098', 'Malang', 'Web', 'Tresno', 'Kulino', 'titaniafaudiafifah1998@gmail.com', 'titaniafaudiafifah1998@gmail.com', 'visio.net'),
-(181, 'EDII', 'Jalan Soekarno Hatta', '46436436', 'Surabaya', 'Web', 'Santo', 'afafw', 'soripin18@gmail.com', 'soripin18@gmail.com', 'soripin18@gmail.com'),
-(183, 'DOT', 'Jl. Malang 9021', '08293102398', 'Malang', 'Web', 'Sutres', 'Sarwono', 'dot@aw', 'dot@aw', 'dot.com');
+(180, 'Visionet', 'Araya Malang', '2040123098', 'Malang', 'Web', 'Tresno Sukoyo, M.Pd', 'Kulino', 'titaniafaudiafifah1998@gmail.com', 'titaniafaudiafifah1998@gmail.com', 'visio.net'),
+(181, 'EDII', 'Jalan Soekarno Hatta', '46436436', 'Surabaya', 'Web', 'Santo Santoso, S.Ag', 'afafw', 'soripin18@gmail.com', 'soripin18@gmail.com', 'soripin18@gmail.com'),
+(183, 'DOT', 'Jl. Malang 9021', '08293102398', 'Malang', 'Web', 'Sutres Mulyadi, S.Pd', 'Sarwono', 'dot@aw', 'dot@aw', 'dot.com');
 
 -- --------------------------------------------------------
 
