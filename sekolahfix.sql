@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16 Mar 2019 pada 12.31
+-- Generation Time: 19 Mar 2019 pada 05.31
 -- Versi Server: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -496,6 +496,25 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_kelas`, `id_mapel`, `id_ruangan`, `id_Har
 ('JADWAL-37', 11, 3, 2, 3, '7'),
 ('JADWAL-45', 11, 5, 4, 4, '5'),
 ('JADWAL-57', 11, 3, 5, 5, '7');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `jurnal`
+--
+
+CREATE TABLE `jurnal` (
+  `id_jurnal` int(11) NOT NULL,
+  `id_siswa_prakerin` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `jurnal`
+--
+
+INSERT INTO `jurnal` (`id_jurnal`, `id_siswa_prakerin`) VALUES
+(2, 3150),
+(6, 3154);
 
 -- --------------------------------------------------------
 
@@ -1292,17 +1311,24 @@ INSERT INTO `siswa` (`nis`, `nisn`, `namaSiswa`, `namaPanggilan`, `jk`, `tempatL
 
 CREATE TABLE `tbl_jurnalprakerin` (
   `id_jurnalprakerin` int(11) NOT NULL,
-  `id_siswa_prakerin` int(11) NOT NULL,
-  `jurnal` varchar(100) DEFAULT NULL
+  `id_jurnal` int(11) DEFAULT NULL,
+  `jurnal` varchar(100) NOT NULL,
+  `tgl` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_jurnalprakerin`
 --
 
-INSERT INTO `tbl_jurnalprakerin` (`id_jurnalprakerin`, `id_siswa_prakerin`, `jurnal`) VALUES
-(5, 3147, '1551666838.pdf'),
-(6, 3148, '1551666970.pdf');
+INSERT INTO `tbl_jurnalprakerin` (`id_jurnalprakerin`, `id_jurnal`, `jurnal`, `tgl`) VALUES
+(8, 2, '1552748675.pdf', '2019-03-16'),
+(13, 2, '1552961210.pdf', '2019-03-19'),
+(14, 6, '1552961286.pdf', '2019-03-19'),
+(15, 6, '1552961364.pdf', '2019-03-18'),
+(16, 6, '1552961712.pdf', '2019-03-17'),
+(17, 6, '1552961746.pdf', '2019-03-16'),
+(18, 6, '1552961861.pdf', '2019-03-15'),
+(19, 2, '1552962002.pdf', '2019-03-17');
 
 -- --------------------------------------------------------
 
@@ -1330,8 +1356,8 @@ CREATE TABLE `tbl_nilaiprakerin` (
 --
 
 INSERT INTO `tbl_nilaiprakerin` (`id_nilaiprakerin`, `id_siswa_prakerin`, `at1`, `at2`, `at3`, `at4`, `ant1`, `ant2`, `ant3`, `ant4`, `ant5`, `ant6`) VALUES
-(3148, 3147, 90, 90, 90, 80, 80, 70, 78, 90, 79, 85),
-(3149, 3148, 89, 78, 80, 70, 90, 98, 68, 80, 75, 65);
+(3151, 3150, 90, 89, 78, 68, 94, 76, 85, 80, 34, 70),
+(3155, 3154, 90, 90, 90, 80, 87, 68, 70, 56, 89, 76);
 
 -- --------------------------------------------------------
 
@@ -1515,38 +1541,6 @@ INSERT INTO `t_belajar` (`idbelajar`, `thajar`, `sem`, `pelajaran`, `nip`, `tgla
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `t_jurnal`
---
-
-CREATE TABLE `t_jurnal` (
-  `id_jurnal` int(10) NOT NULL,
-  `userid` int(10) DEFAULT NULL,
-  `thajar` varchar(10) COLLATE latin1_general_ci NOT NULL,
-  `nama` varchar(100) COLLATE latin1_general_ci NOT NULL,
-  `hari` varchar(30) COLLATE latin1_general_ci NOT NULL,
-  `tgl` date NOT NULL,
-  `kelas` varchar(10) COLLATE latin1_general_ci NOT NULL,
-  `jam_mulai` time NOT NULL,
-  `jam_selesai` time NOT NULL,
-  `kegiatan` text COLLATE latin1_general_ci NOT NULL,
-  `sdh_blm` enum('S','B') COLLATE latin1_general_ci NOT NULL DEFAULT 'B',
-  `ket` text COLLATE latin1_general_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Dumping data untuk tabel `t_jurnal`
---
-
-INSERT INTO `t_jurnal` (`id_jurnal`, `userid`, `thajar`, `nama`, `hari`, `tgl`, `kelas`, `jam_mulai`, `jam_selesai`, `kegiatan`, `sdh_blm`, `ket`) VALUES
-(2, 4, '2018/2017', 'Hana', 'Rabu', '2019-01-30', 'TKJ', '07:00:00', '08:00:00', 'Belajar', 'S', 'Tidak ada.'),
-(445, 4, '2017/2018', 'Pedrik', 'Rabu', '2019-01-30', '10 TKJ 1', '19:37:00', '19:55:00', 'Mengaji', 'S', 'Hafalan Surah Yasin'),
-(450, 3, '2017/2018', 'Gery', 'Minggu', '2019-02-04', '10 TKJ 1', '23:17:27', '23:17:27', 'Hheheheh', 'B', 'Tugas'),
-(449, 1, '2018/2019', 'Pak Imam', 'Minggu', '2019-02-04', '10 TKJ 1', '23:14:37', '23:14:37', 'Belajar move on', 'S', 'Tugas'),
-(448, 3, '2018/2019', 'Gery', 'Rabu', '2019-01-30', '10 TKJ 1', '20:58:06', '20:58:06', 'Belajar jaringan', 'B', 'Ada tugas');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `t_kelas`
 --
 
@@ -1709,8 +1703,8 @@ CREATE TABLE `t_prakerin_siswa` (
 --
 
 INSERT INTO `t_prakerin_siswa` (`id_siswa_prakerin`, `id_tmp_prakerin`, `nis`, `lama_bln`, `tgl_start`, `tgl_akhir`, `kelas`, `prakerinke`) VALUES
-(3147, 180, 2221322, 2, '2019-03-08', '2019-03-19', '1', 1),
-(3148, 183, 44453111, 2, '2019-03-22', '2019-03-31', '2', 3);
+(3150, 180, 12322121, 3, '2019-03-01', '2019-03-27', '12', 2),
+(3154, 183, 123221, 3, '2019-03-01', '2019-03-31', '12', 2);
 
 -- --------------------------------------------------------
 
@@ -2249,6 +2243,13 @@ ALTER TABLE `jadwal`
   ADD KEY `id_pembagian` (`id_kelas`);
 
 --
+-- Indexes for table `jurnal`
+--
+ALTER TABLE `jurnal`
+  ADD PRIMARY KEY (`id_jurnal`),
+  ADD KEY `id_siswa_prakerin` (`id_siswa_prakerin`);
+
+--
 -- Indexes for table `jurusan`
 --
 ALTER TABLE `jurusan`
@@ -2420,7 +2421,7 @@ ALTER TABLE `siswa`
 --
 ALTER TABLE `tbl_jurnalprakerin`
   ADD PRIMARY KEY (`id_jurnalprakerin`),
-  ADD KEY `id_siswa_prakerin` (`id_siswa_prakerin`);
+  ADD KEY `id_jurnal` (`id_jurnal`);
 
 --
 -- Indexes for table `tbl_nilaiprakerin`
@@ -2454,16 +2455,6 @@ ALTER TABLE `t_beasiswa`
 --
 ALTER TABLE `t_belajar`
   ADD PRIMARY KEY (`idbelajar`);
-
---
--- Indexes for table `t_jurnal`
---
-ALTER TABLE `t_jurnal`
-  ADD PRIMARY KEY (`id_jurnal`),
-  ADD KEY `t_jurnal_nama_fk` (`nama`),
-  ADD KEY `t_jurnal_userid_fk` (`userid`),
-  ADD KEY `t_jurnal_thajar_fk` (`thajar`),
-  ADD KEY `t_jurnal_kelas_fk` (`kelas`);
 
 --
 -- Indexes for table `t_kelas`
@@ -2570,16 +2561,22 @@ ALTER TABLE `absensi`
   MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
+-- AUTO_INCREMENT for table `jurnal`
+--
+ALTER TABLE `jurnal`
+  MODIFY `id_jurnal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `tbl_jurnalprakerin`
 --
 ALTER TABLE `tbl_jurnalprakerin`
-  MODIFY `id_jurnalprakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_jurnalprakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilaiprakerin`
 --
 ALTER TABLE `tbl_nilaiprakerin`
-  MODIFY `id_nilaiprakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3150;
+  MODIFY `id_nilaiprakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3156;
 
 --
 -- AUTO_INCREMENT for table `t_beasiswa`
@@ -2597,13 +2594,23 @@ ALTER TABLE `t_prakerin`
 -- AUTO_INCREMENT for table `t_prakerin_siswa`
 --
 ALTER TABLE `t_prakerin_siswa`
-  MODIFY `id_siswa_prakerin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3149;
+  MODIFY `id_siswa_prakerin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3155;
 
 --
 -- AUTO_INCREMENT for table `t_raport2`
 --
 ALTER TABLE `t_raport2`
   MODIFY `id_raport2` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27018;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `tbl_jurnalprakerin`
+--
+ALTER TABLE `tbl_jurnalprakerin`
+  ADD CONSTRAINT `tbl_jurnalprakerin_ibfk_1` FOREIGN KEY (`id_jurnal`) REFERENCES `jurnal` (`id_jurnal`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
