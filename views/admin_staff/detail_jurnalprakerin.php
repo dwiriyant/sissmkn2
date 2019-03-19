@@ -126,7 +126,7 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
 
                                   <tr>
                                  <th scope="row"><?= $i++; ?></th>
-                                 <td><?= $data['jurnal']; ?></td>
+                                 <td><a href="jurnal/<?= $data['jurnal']; ?>" target="_blank"><?= $data['jurnal']; ?></a></td>
                                  <td><?= $data['tgl']; ?></td>
                                 </tr>
                                 <?php } ?>
