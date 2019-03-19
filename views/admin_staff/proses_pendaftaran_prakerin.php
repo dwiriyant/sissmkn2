@@ -14,7 +14,8 @@ $aksi = $_GET['aksi'];
 if($aksi == 'insert') {
     $insertId = $object->inserttbl_pendaftaran_prakerin($_POST['id_siswa_prakerin'], $_POST['id_tmp_prakerin'], $_POST['nis'], $_POST['lama_bln'], $_POST['tgl_start'], $_POST['tgl_akhir'], $_POST['kelas'], $_POST['prakerinke']);
     $object->insertToNilai($_POST['id_nilaiprakerin'], $insertId->insert_id);
-    $object->insertToJurnal($_POST['id_jurnalprakerin'], $insertId->insert_id);
+    $object->insertToJurnal($_POST['id_jurnal'], $insertId->insert_id);
+    $object->insertToJurnalDetail($_POST['id_jurnalprakerin'], $_POST['id_jurnal']);
     header("location:http://localhost:8080/sissmkn2/views/admin_staff/pendaftaran_prakerin.php");
 }  elseif ($aksi == 'update') {
 	 $object->updatetbl_perusahaan($_POST['id_siswa_prakerin'], $_POST['id_tmp_prakerin'], $_POST['nis'], $_POST['lama_bln'], $_POST['tgl_start'], $_POST['tgl_akhir'], $_POST['kelas'], $_POST['prakerinke']);

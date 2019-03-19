@@ -38,6 +38,7 @@ $object = new tbl_jurnalprakerin();
                         <div class="card-header">
                             <strong class="card-title">List </strong> Data Jurnal Prakerin
                         </div>
+
                         <div class="card-body">
                           <table id="coba" class="table table-striped table-bordered">
                                 <thead>
@@ -46,7 +47,6 @@ $object = new tbl_jurnalprakerin();
                                     <th>NIS</th>
                                     <th>Nama Siswa</th>
                                     <th>Nama Industri</th>
-                                    <th>Jurnal</th>
                                     <th>Action</th>
                                   </tr>
                                 </thead>
@@ -54,16 +54,16 @@ $object = new tbl_jurnalprakerin();
                                    <?php $i = 1; ?>
                                 <?php foreach($object->tampildata() as $data) {
                                 ?>
+
+
                                   <tr>
                                  <th scope="row"><?= $i++; ?></th>
                                  <td><?= $data['nis']; ?></td>
                                  <td><?= $data['namaSiswa']; ?></td>
                                  <td><?= $data['nama_prakerin']; ?></td>
-                                 <td><a href="jurnal/<?= $data['jurnal']?>" target="_blank"><?= $data['jurnal']?></a></td>
+                                 
                                 <td>
-                                      <a href="detail_jurnalprakerin.php?id_jurnalprakerin=<?=$data['id_jurnalprakerin']; ?> &aksi=update"><button title="Detail" type="button" class="btn btn-primary btn-sm"><i class="fa ti-eye"></i></button></a>
-
-                                      <a href="upload_jurnalprakerin.php?id_jurnalprakerin=<?=$data['id_jurnalprakerin']; ?> &aksi=update"><button title="Upload" type="button" class="btn btn-success btn-sm"><i class="fa ti-upload"></i> Upload Jurnal</button></a>
+                                      <a href="detail_jurnalprakerin.php?id_jurnal=<?=$data['id_jurnal']; ?> &aksi=update"><button title="Detail" type="button" class="btn btn-primary btn-sm"><i class="fa ti-eye"></i></button></a>
 
                                       <a href="proses_jurnalprakerin.php?id_jurnalprakerin=<?=$data['id_jurnalprakerin']; ?> &aksi=hapus"><button title="Hapus" type="button" class="btn btn-danger btn-sm"><i class="fa ti-eraser"></i></button></a>
                                       

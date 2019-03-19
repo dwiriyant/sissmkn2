@@ -10,15 +10,18 @@ ini_set('display_errors', 1); ?>
 $object = new tbl_jurnalprakerin();
  	
 $aksi = $_GET['aksi'];
- if ($aksi == 'update') {
+ if ($aksi == 'insert') {
  	 $jurnal_name = $_FILES['jurnal']['name'];
  	 $path = pathinfo($jurnal_name);
 	 $jurnal_tmp = $_FILES['jurnal']['tmp_name'];
 	 $newName = time().'.'.$path['extension'];
 
+	 $idj = $_POST['id_jurnal'];
+
 	 move_uploaded_file($jurnal_tmp,'jurnal/'.$newName);
-	 $object->updatetbl_jurnalprakerin($_POST['id_jurnalprakerin'], $_POST['id_siswa_prakerin'], $newName);
-    header("location:http://localhost:8080/sissmkn2/views/admin_staff/jurnal_prakerin.php");
+	 $object->insertjurnal($_POST['id_jurnalprakerin'], $_POST['id_jurnal'], $newName, $_POST['tgl']);
+    
+    header("location:http://localhost:8080/sissmkn2/views/admin_staff/detail_jurnalprakerin.php?id_jurnal=".$idj);
 
 }elseif ($aksi == 'hapus') {
 	 $object->deletetbl_jurnalprakerin($_GET['id_jurnalprakerin']);

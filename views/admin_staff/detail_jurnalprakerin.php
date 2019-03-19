@@ -7,7 +7,7 @@ require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_jurnalprakerin.php");
 $tbl_perusahaan= new tbl_jurnalprakerin();
 ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -45,10 +45,12 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                           <div id="pay-invoice">
                               <div class="card-body">
                                   <?php
-                                    foreach ($tbl_perusahaan->getJurnalById($_GET['id_jurnalprakerin']) as $item) {
+                                    foreach ($tbl_perusahaan->getJurnalById($_GET['id_jurnal']) as $item) {
                                   ?>
 
-                                      <form action="<?php echo $siteurl; ?>/views/admin_staff/proses_jurnalprakerin.php?aksi=insert" method="post" class="form-horizontal">
+                                      <form action="<?php echo $siteurl; ?>/views/admin_staff/proses_jurnalprakerin.php?aksi=insert" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                        <input type="hidden" name="id_siswa_prakerin" value="<?= $item['id_siswa_prakerin']?>">
+                                        <input type="hidden" name="id_jurnal" value="<?= $item['id_jurnal']?>">
                                       <div class="row">
                                           <div class="col-6">
                                               <div class="form-group">
@@ -74,7 +76,7 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                                           
                                           <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tempat Prakerin</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nama_prakerin"value="<?= $item['nama_prakerin']; ?>" class="form-control"readonly></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nama_prakerin" value="<?= $item['nama_prakerin']; ?>" class="form-control"readonly></div>
                                           </div>
 
                                       </div>
@@ -82,10 +84,11 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                                       <div class="row">
                                           <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Jurnal</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="jurnal" name="jurnal" class="form-control" value="<?= $item['jurnal']; ?>" readonly></div>
+                                              <div class="col-12 col-md-9"><input type="file" id="jurnal" name="jurnal" class="form-control"></div>
                                           </div>
                                           <div class="col-6">
-                                              
+                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tanggal</label></div>
+                                              <div class="col-12 col-md-9"><input type="date" id="tgl" name="tgl" class="form-control"></div>
                                           </div>
 
                                       </div>
@@ -93,7 +96,12 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                         </div>
                     </div>
 
+
+
                     <div class="card-footer">
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Simpan
+                      </button>
                       <a href="jurnal_prakerin.php"><button title="Hapus" type="button" class="btn btn-danger btn-sm"><i class="fa ti-back"></i> Kembali</button></a>
                     
 
@@ -102,12 +110,35 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                       <?php } ?>
                       
                                       </form>
+                    <table id="coba" class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>N0.</th>
+                                    <th>Jurnal</th>
+                                    <th>Tanggal</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                   <?php $i = 1; ?>
+                                <?php foreach($tbl_perusahaan->getJurnalTableById($_GET['id_jurnal']) as $data) {
+                                ?>
+
+
+                                  <tr>
+                                 <th scope="row"><?= $i++; ?></th>
+                                 <td><?= $data['jurnal']; ?></td>
+                                 <td><?= $data['tgl']; ?></td>
+                                </tr>
+                                <?php } ?>
+                              </tbody>
+                            </table>
                     </div>
                     </div>
                     </div>
                     </div>
                     </div>
                     </div>
+                    
 
 
     <?php require ($_SERVER['DOCUMENT_ROOT']."/SISSMKN2/part/footer.php"); ?>  

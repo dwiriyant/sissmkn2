@@ -3,7 +3,7 @@
 class t_prakerin_siswa extends Database {
     var $table = 't_prakerin_siswa';
     var $nilai = 'tbl_nilaiprakerin';
-    var $jurnal = 'tbl_jurnalprakerin';
+    var $jurnal = 'jurnal';
 
     function tampildata() {
         $con = $this->dbconnect();
@@ -59,10 +59,17 @@ function tampilidprs() {
         $query = mysqli_query($con,$sql);
     }
 
-    function insertToJurnal($id_jurnalprakerin, $insertId)
+    function insertToJurnal($id_jurnal, $insertId)
     {
         $con = $this->dbconnect();
-        $sql = 'INSERT INTO '.$this->jurnal.' VALUES("'.''.'", "'.$insertId.'", 0)';
+        $sql = 'INSERT INTO '.$this->jurnal.' VALUES("'.''.'", "'.$insertId.'")';
+        $query = mysqli_query($con,$sql);
+    }
+
+    function insertToJurnalDetail($id_jurnalprakerin, $id_jurnal)
+    {
+        $con = $this->dbconnect();
+        $sql = 'INSERT INTO '.$this->jurnal.' VALUES("'.''.'", "'.$id_jurnal.'", "", "")';
         $query = mysqli_query($con,$sql);
     }
 

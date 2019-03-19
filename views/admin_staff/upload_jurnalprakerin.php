@@ -7,7 +7,7 @@ require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/config/tbl_jurnalprakerin.php");
 $tbl_perusahaan= new tbl_jurnalprakerin();
 ?>
 
-<?php require ($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
+<?php require($_SERVER['DOCUMENT_ROOT']."/sissmkn2/part/header.php"); ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -87,7 +87,8 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                                               <div class="col-12 col-md-9"><input type="file" id="jurnal" name="jurnal" class="form-control"></div>
                                           </div>
                                           <div class="col-6">
-                                              
+                                              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tanggal</label></div>
+                                              <div class="col-12 col-md-9"><input type="date" id="tgl" name="tgl" class="form-control"></div>
                                           </div>
 
                                       </div>

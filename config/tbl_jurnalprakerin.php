@@ -5,8 +5,9 @@ class tbl_jurnalprakerin extends Database {
 
     function tampildata() {
         $con = $this->dbconnect();
-        $sql = "select t_prakerin_siswa.id_siswa_prakerin, tbl_jurnalprakerin.id_jurnalprakerin, tbl_jurnalprakerin.jurnal, siswa.nis, siswa.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin FROM tbl_jurnalprakerin JOIN t_prakerin_siswa ON tbl_jurnalprakerin.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN siswa ON t_prakerin_siswa.nis = siswa.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin";
+        $sql = "select t_prakerin_siswa.id_siswa_prakerin, siswa.nis, siswa.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, jurnal.id_jurnal, jurnal.id_siswa_prakerin FROM jurnal JOIN t_prakerin_siswa ON jurnal.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN siswa ON t_prakerin_siswa.nis = siswa.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin";
         $query = mysqli_query($con,$sql);
+        $hasil = [];
 		while($data = mysqli_fetch_array($query)){
 			$hasil[] = $data;
 		}
@@ -24,10 +25,21 @@ class tbl_jurnalprakerin extends Database {
         return $hasil;
     }
 
-    function getJurnalById($id_jurnalprakerin)
+    function getJurnalById($id_jurnal)
     {
         $con = $this->dbconnect();
-        $sql = 'select t_prakerin_siswa.id_siswa_prakerin, tbl_jurnalprakerin.id_jurnalprakerin, tbl_jurnalprakerin.jurnal, siswa.nis, siswa.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin FROM tbl_jurnalprakerin JOIN t_prakerin_siswa ON tbl_jurnalprakerin.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN siswa ON t_prakerin_siswa.nis = siswa.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin where id_jurnalprakerin = '.(int)$id_jurnalprakerin;
+        $sql = 'select t_prakerin_siswa.id_siswa_prakerin, siswa.nis, siswa.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, jurnal.id_jurnal, jurnal.id_siswa_prakerin FROM jurnal JOIN t_prakerin_siswa ON jurnal.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN siswa ON t_prakerin_siswa.nis = siswa.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin where id_jurnal = '.(int)$id_jurnal;
+        $query = mysqli_query($con,$sql);
+        while($data = mysqli_fetch_array($query)){
+            $hasil[] = $data;
+        }
+        return $hasil;
+    }
+
+    function getJurnalTableById($id_jurnal)
+    {
+        $con = $this->dbconnect();
+        $sql = 'select * FROM tbl_jurnalprakerin where id_jurnal = '.(int)$id_jurnal;
         $query = mysqli_query($con,$sql);
         while($data = mysqli_fetch_array($query)){
             $hasil[] = $data;
@@ -54,10 +66,16 @@ function tampilidprs() {
         return $id;
     }
 
-    function updatetbl_jurnalprakerin($id_jurnalprakerin, $id_siswa_prakerin, $nama)
+    function insertjurnal($id_jurnalprakerin, $id_jurnal, $nama, $tgl) {
+        $con = $this->dbconnect();
+        $sql = 'INSERT INTO '.$this->table.' VALUES("'.$id_jurnalprakerin.'", "'.$id_jurnal.'", "'.$nama.'", "'.$tgl.'")';
+        $query = mysqli_query($con,$sql);
+    }
+
+    function updatetbl_jurnalprakerin($id_jurnalprakerin, $id_siswa_prakerin, $nama, $tgl)
     {
         $con = $this->dbconnect();
-        $sql = 'UPDATE '.$this->table.' SET id_jurnalprakerin="'.$id_jurnalprakerin.'", id_siswa_prakerin="'.$id_siswa_prakerin.'", jurnal="'.$nama.'" where id_jurnalprakerin= "'.$id_jurnalprakerin.'"';
+        $sql = 'UPDATE '.$this->table.' SET id_jurnalprakerin="'.$id_jurnalprakerin.'", id_siswa_prakerin="'.$id_siswa_prakerin.'", jurnal="'.$nama.'", tgl="'.$tgl.'" where id_jurnalprakerin= "'.$id_jurnalprakerin.'"';
         $query = mysqli_query($con,$sql) or die(mysqli_error($con));
     }
 
