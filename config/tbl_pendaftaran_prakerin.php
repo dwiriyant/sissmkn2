@@ -45,25 +45,27 @@ function tampilidprs() {
         return $id;
     }
 
-    function inserttbl_pendaftaran_prakerin($id_siswa_prakerin, $id_tmp_prakerin, $nis, $lama_bln, $tgl_start, $tgl_akhir, $kelas, $prakerinke) {
+    function inserttbl_pendaftaran_prakerin($id_tmp_prakerin, $nis, $lama_bln, $tgl_start, $tgl_akhir, $kelas, $prakerinke) {
         $con = $this->dbconnect();
-        $sql = 'INSERT INTO '.$this->table.' VALUES("'.$id_siswa_prakerin.'", "'.$id_tmp_prakerin.'", "'.$nis.'", "'.$lama_bln.'", "'.$tgl_start.'", "'.$tgl_akhir.'", "'.$kelas.'", "'.$prakerinke.'")     ';
+        $sql = 'INSERT INTO '.$this->table.' VALUES(NULL, "'.$id_tmp_prakerin.'", "'.$nis.'", "'.$lama_bln.'", "'.$tgl_start.'", "'.$tgl_akhir.'", "'.$kelas.'", "'.$prakerinke.'")     ';
         $query = mysqli_query($con,$sql);
+        
         return $con;
     }
 
-    function insertToNilai($id_nilaiprakerin, $insertId)
+    function insertToNilai($insertId)
     {
         $con = $this->dbconnect();
-        $sql = 'INSERT INTO '.$this->nilai.' VALUES("'.''.'", "'.$insertId.'", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)';
+        $sql = 'INSERT INTO '.$this->nilai.' VALUES(NULL, "'.$insertId.'", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)';
         $query = mysqli_query($con,$sql);
     }
 
-    function insertToJurnal($id_jurnal, $insertId)
+    function insertToJurnal($insertId)
     {
         $con = $this->dbconnect();
-        $sql = 'INSERT INTO '.$this->jurnal.' VALUES("'.''.'", "'.$insertId.'")';
+        $sql = 'INSERT INTO '.$this->jurnal.' VALUES(NULL, "'.$insertId.'")';
         $query = mysqli_query($con,$sql);
+        
     }
 
     function insertToJurnalDetail($id_jurnalprakerin, $id_jurnal)

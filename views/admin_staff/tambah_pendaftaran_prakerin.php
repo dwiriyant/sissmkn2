@@ -15,7 +15,7 @@ $tbl_perusahaan = new t_prakerin_siswa();
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Data Guru</h1>
+                        <h1>Tambah Data Prakerin</h1>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@ $tbl_perusahaan = new t_prakerin_siswa();
                                           <div class="col-6">
                                               <div class="form-group">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">NIS</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="nis" name="nis" class="form-control"value="<?= $data['nis']; ?>"></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="nis" name="nis" class="form-control"value="<?= $data['nis']; ?>" placeholder="NIS harus sesuai pada DATA SISWA"></div>
                                               </div>
                                           </div>
                                          
@@ -90,11 +90,11 @@ $tbl_perusahaan = new t_prakerin_siswa();
                                           
                                           <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Lama Bulan Magang</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="lama_bln" name="lama_bln" class="form-control" value="<?= $data['lama_bln']; ?>"></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="lama_bln" name="lama_bln" class="form-control" value="<?= $data['lama_bln']; ?>" placeholder="1/2/3"></div>
                                           </div>
                                           <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kelas</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="kelas" name="kelas"  class="form-control" value="<?= $data['kelas']; ?>"></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="kelas" name="kelas"  class="form-control" value="<?= $data['kelas']; ?>" placeholder="1/2/3"></div>
                                           </div>
 
                                       </div>
@@ -114,7 +114,7 @@ $tbl_perusahaan = new t_prakerin_siswa();
                                       <div class="row">
                                          <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Prakerin Ke</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="prakerinke" name="prakerinke" class="form-control" value="<?= $data['prakerinke']; ?>"></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="prakerinke" name="prakerinke" class="form-control" value="<?= $data['prakerinke']; ?>" placeholder="1/2/3"></div>
                                           </div>
                                       </div>
                                           
