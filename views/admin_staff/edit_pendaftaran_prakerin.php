@@ -59,7 +59,7 @@ $tbl_perusahaan= new t_prakerin_siswa();?>
                                           <div class="col-6">
                                               <div class="form-group">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">NIS</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="nis" name="nis" value="<?= $item['nis']; ?>" class="form-control"></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="nis" name="nis" value="<?= $item['no_induk']; ?>" class="form-control"></div>
                                               </div>
                                           </div>
                                           

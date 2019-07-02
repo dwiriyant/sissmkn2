@@ -5,7 +5,7 @@ class tbl_nilaiprakerin extends Database {
 
     function tampildata() {
         $con = $this->dbconnect();
-        $sql = "select t_prakerin_siswa.id_siswa_prakerin, tbl_nilaiprakerin.id_nilaiprakerin, siswa.nis, siswa.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, tbl_nilaiprakerin.at1, tbl_nilaiprakerin.at2, tbl_nilaiprakerin.at3, tbl_nilaiprakerin.at4, tbl_nilaiprakerin.ant1, tbl_nilaiprakerin.ant2, tbl_nilaiprakerin.ant3, tbl_nilaiprakerin.ant4, tbl_nilaiprakerin.ant5, tbl_nilaiprakerin.ant6 FROM tbl_nilaiprakerin JOIN t_prakerin_siswa ON tbl_nilaiprakerin.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN siswa ON t_prakerin_siswa.nis = siswa.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin";
+        $sql = "select t_prakerin_siswa.id_siswa_prakerin, tbl_nilaiprakerin.id_nilaiprakerin, t_sis_thajar.nis, t_sis_thajar.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, tbl_nilaiprakerin.at1, tbl_nilaiprakerin.at2, tbl_nilaiprakerin.at3, tbl_nilaiprakerin.at4, tbl_nilaiprakerin.ant1, tbl_nilaiprakerin.ant2, tbl_nilaiprakerin.ant3, tbl_nilaiprakerin.ant4, tbl_nilaiprakerin.ant5, tbl_nilaiprakerin.ant6 FROM tbl_nilaiprakerin JOIN t_prakerin_siswa ON tbl_nilaiprakerin.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN t_sis_thajar ON t_prakerin_siswa.nis = t_sis_thajar.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin";
         $query = mysqli_query($con,$sql);
 		while($data = mysqli_fetch_array($query)){
 			$hasil[] = $data;
@@ -45,7 +45,7 @@ function tampilidprs() {
     
     function getDetailtbl_nilaiprakerin($id_nilaiprakerin){
         $con = $this->dbconnect();
-        $sql = 'select t_prakerin_siswa.id_siswa_prakerin, tbl_nilaiprakerin.id_nilaiprakerin, siswa.nis, siswa.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, t_prakerin.program, t_prakerin_siswa.tgl_start, t_prakerin.pembimbing, tbl_nilaiprakerin.at1, tbl_nilaiprakerin.at2, tbl_nilaiprakerin.at3, tbl_nilaiprakerin.at4, tbl_nilaiprakerin.ant1, tbl_nilaiprakerin.ant2, tbl_nilaiprakerin.ant3, tbl_nilaiprakerin.ant4, tbl_nilaiprakerin.ant5, tbl_nilaiprakerin.ant6 FROM tbl_nilaiprakerin JOIN t_prakerin_siswa ON tbl_nilaiprakerin.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN siswa ON t_prakerin_siswa.nis = siswa.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin where id_nilaiprakerin = '.(int)$id_nilaiprakerin;
+        $sql = 'select t_prakerin_siswa.id_siswa_prakerin, tbl_nilaiprakerin.id_nilaiprakerin, t_sis_thajar.nis, t_sis_thajar.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, t_prakerin.program, t_prakerin_siswa.tgl_start, t_prakerin.pembimbing, tbl_nilaiprakerin.at1, tbl_nilaiprakerin.at2, tbl_nilaiprakerin.at3, tbl_nilaiprakerin.at4, tbl_nilaiprakerin.ant1, tbl_nilaiprakerin.ant2, tbl_nilaiprakerin.ant3, tbl_nilaiprakerin.ant4, tbl_nilaiprakerin.ant5, tbl_nilaiprakerin.ant6 FROM tbl_nilaiprakerin JOIN t_prakerin_siswa ON tbl_nilaiprakerin.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN t_sis_thajar ON t_prakerin_siswa.nis = t_sis_thajar.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin where id_nilaiprakerin = '.(int)$id_nilaiprakerin;
         $query = mysqli_query($con,$sql) or die (mysqli_error($con));
         while($data = mysqli_fetch_array($query)){
             $hasil[] = $data;

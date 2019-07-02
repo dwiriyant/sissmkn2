@@ -7,11 +7,12 @@ class t_prakerin_siswa extends Database {
 
     function tampildata() {
         $con = $this->dbconnect();
-        $sql = "select t_prakerin_siswa.id_siswa_prakerin, siswa.nis,siswa.namaSiswa,t_prakerin.nama_prakerin,t_prakerin.kota_prakerin,t_prakerin.pembimbing,t_prakerin_siswa.tgl_start,t_prakerin_siswa.tgl_akhir,t_prakerin.program from t_prakerin_siswa JOIN siswa ON t_prakerin_siswa.nis=siswa.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin=t_prakerin.id_tmp_prakerin";
+        $sql = "select t_prakerin_siswa.id_siswa_prakerin, t_sis_thajar.no_induk,t_sis_thajar.nama,t_prakerin.nama_prakerin,t_prakerin.kota_prakerin,t_prakerin.pembimbing,t_prakerin_siswa.tgl_start,t_prakerin_siswa.tgl_akhir,t_prakerin.program from t_prakerin_siswa JOIN t_sis_thajar ON t_prakerin_siswa.nis=t_sis_thajar.no_induk JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin=t_prakerin.id_tmp_prakerin";
         $query = mysqli_query($con,$sql);
 		while($data = mysqli_fetch_array($query)){
 			$hasil[] = $data;
-		}    
+        }    
+        
 		return $hasil;
     }
 
@@ -77,7 +78,7 @@ function tampilidprs() {
 
     function getdetail_pendaftaran_prakerin($id_siswa_prakerin){
         $con = $this->dbconnect();
-        $sql = 'select t_prakerin_siswa.id_siswa_prakerin, t_prakerin_siswa.lama_bln, t_prakerin_siswa.kelas, t_prakerin_siswa.prakerinke, siswa.nis,siswa.namaSiswa,t_prakerin.nama_prakerin,t_prakerin.kota_prakerin,t_prakerin.pembimbing,t_prakerin_siswa.tgl_start,t_prakerin_siswa.tgl_akhir,t_prakerin.program from t_prakerin_siswa JOIN siswa ON t_prakerin_siswa.nis=siswa.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin=t_prakerin.id_tmp_prakerin where id_siswa_prakerin = '.(int)$id_siswa_prakerin;
+        $sql = 'select t_prakerin_siswa.id_siswa_prakerin, t_prakerin_siswa.lama_bln, t_prakerin_siswa.kelas, t_prakerin_siswa.prakerinke, t_sis_thajar.no_induk,t_sis_thajar.nama,t_prakerin.nama_prakerin,t_prakerin.kota_prakerin,t_prakerin.pembimbing,t_prakerin_siswa.tgl_start,t_prakerin_siswa.tgl_akhir,t_prakerin.program from t_prakerin_siswa JOIN t_sis_thajar ON t_prakerin_siswa.nis=t_sis_thajar.no_induk JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin=t_prakerin.id_tmp_prakerin where id_siswa_prakerin = '.(int)$id_siswa_prakerin;
         $query = mysqli_query($con,$sql);
         while($data = mysqli_fetch_array($query)){
             $hasil[] = $data;

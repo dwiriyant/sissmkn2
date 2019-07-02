@@ -61,7 +61,7 @@ $tbl_perusahaan= new t_prakerin_siswa();
                                           <div class="col-6">
                                               <div class="form-group">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">NIS</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nis"value="<?= $item['nis']; ?>" class="form-control"readonly></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nis"value="<?= $item['no_induk']; ?>" class="form-control"readonly></div>
                                               </div>
                                           </div>
                                           
@@ -70,7 +70,7 @@ $tbl_perusahaan= new t_prakerin_siswa();
                                           
                                           <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Siswa</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nama_prakerin" value="<?= $item['namaSiswa']; ?>" class="form-control"readonly></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nama_prakerin" value="<?= $item['nama']; ?>" class="form-control"readonly></div>
                                           </div>
                                           
                                           <div class="col-6">

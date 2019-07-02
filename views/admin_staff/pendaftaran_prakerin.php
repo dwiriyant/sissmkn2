@@ -65,8 +65,8 @@ $object = new t_prakerin_siswa();
                                 ?>
                                   <tr>
                                  <th scope="row"><?= $i++; ?></th>
-                                 <td><?= $data['nis']; ?></td>
-                                 <td><?= $data['namaSiswa']; ?></td>
+                                 <td><?= $data['no_induk']; ?></td>
+                                 <td><?= $data['nama']; ?></td>
                                 <td><?= $data['nama_prakerin']; ?></td>
                                 <td><?= $data['kota_prakerin']; ?></td>
                                 <td><?= $data['pembimbing']; ?></td>
