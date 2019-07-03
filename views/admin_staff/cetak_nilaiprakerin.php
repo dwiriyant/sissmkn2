@@ -84,7 +84,7 @@ $tbl_perusahaan= new tbl_nilaiprakerin();
                                     foreach ($tbl_perusahaan->getDetailtbl_nilaiprakerin($_GET['id_nilaiprakerin']) as $item) {
                                   ?>
 
-	<p>NAMA SISWA : <?= $item['namaSiswa']; ?><br/>
+	<p>NAMA SISWA : <?= $item['nama']; ?><br/>
 	NAMA INSTANSI / PERUSAHAAN : <?= $item['nama_prakerin']; ?><br/>
 	TANGGAL PRAKERIN : <?= $item['tgl_start']; ?></p>
 

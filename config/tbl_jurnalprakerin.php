@@ -5,7 +5,7 @@ class tbl_jurnalprakerin extends Database {
 
     function tampildata() {
         $con = $this->dbconnect();
-        $sql = "select t_prakerin_siswa.id_siswa_prakerin, t_sis_thajar.nis, t_sis_thajar.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, jurnal.id_jurnal, jurnal.id_siswa_prakerin FROM jurnal JOIN t_prakerin_siswa ON jurnal.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN t_sis_thajar ON t_prakerin_siswa.nis = t_sis_thajar.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin";
+        $sql = "select t_prakerin_siswa.id_siswa_prakerin, t_sis_thajar.no_induk, t_sis_thajar.nama, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, jurnal.id_jurnal, jurnal.id_siswa_prakerin FROM jurnal JOIN t_prakerin_siswa ON jurnal.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN t_sis_thajar ON t_prakerin_siswa.nis = t_sis_thajar.no_induk JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin";
         $query = mysqli_query($con,$sql);
         $hasil = [];
 		while($data = mysqli_fetch_array($query)){
@@ -28,7 +28,9 @@ class tbl_jurnalprakerin extends Database {
     function getJurnalById($id_jurnal)
     {
         $con = $this->dbconnect();
-        $sql = 'select t_prakerin_siswa.id_siswa_prakerin, t_sis_thajar.nis, t_sis_thajar.namaSiswa, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, jurnal.id_jurnal, jurnal.id_siswa_prakerin FROM jurnal JOIN t_prakerin_siswa ON jurnal.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin JOIN t_sis_thajar ON t_prakerin_siswa.nis = t_sis_thajar.nis JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin where id_jurnal = '.(int)$id_jurnal;
+        $sql = 'select t_prakerin_siswa.id_siswa_prakerin, t_sis_thajar.no_induk, t_sis_thajar.nama, t_prakerin.id_tmp_prakerin, t_prakerin.nama_prakerin, jurnal.id_jurnal, jurnal.id_siswa_prakerin FROM jurnal JOIN t_prakerin_siswa ON jurnal.id_siswa_prakerin = t_prakerin_siswa.id_siswa_prakerin 
+        JOIN t_sis_thajar ON t_prakerin_siswa.nis = t_sis_thajar.no_induk 
+        JOIN t_prakerin ON t_prakerin_siswa.id_tmp_prakerin = t_prakerin.id_tmp_prakerin where id_jurnal = '.(int)$id_jurnal;
         $query = mysqli_query($con,$sql);
         while($data = mysqli_fetch_array($query)){
             $hasil[] = $data;

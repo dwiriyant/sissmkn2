@@ -49,8 +49,8 @@ $object = new tbl_nilaiprakerin();
                                 ?>
                                   <tr>
                                  <th scope="row"><?= $i++; ?></th>
-                                 <td><?= $data['nis']; ?></td>
-                                 <td><?= $data['namaSiswa']; ?></td>
+                                 <td><?= $data['no_induk']; ?></td>
+                                 <td><?= $data['nama']; ?></td>
                                  <td><?= $data['nama_prakerin']; ?></td>
                                 
                                 <td>

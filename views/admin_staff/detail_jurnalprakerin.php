@@ -46,6 +46,7 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                               <div class="card-body">
                                   <?php
                                     foreach ($tbl_perusahaan->getJurnalById($_GET['id_jurnal']) as $item) {
+                                      
                                   ?>
 
                                       <form action="<?php echo $siteurl; ?>/views/admin_staff/proses_jurnalprakerin.php?aksi=insert" method="post" class="form-horizontal" enctype="multipart/form-data">
@@ -55,14 +56,14 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                                           <div class="col-6">
                                               <div class="form-group">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Id Jurnal Prakerin</label></div>
-                                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="id_jurnalprakerin" value="<?= $item['id_jurnalprakerin']; ?>" class="form-control"readonly></div>
+                                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="id_jurnalprakerin" value="<?= $item['id_jurnal']; ?>" class="form-control"readonly></div>
                                               </div>
                                           </div>
                                          
                                           <div class="col-6">
                                               <div class="form-group">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">NIS</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nis"value="<?= $item['nis']; ?>" class="form-control"readonly></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nis"value="<?= $item['no_induk']; ?>" class="form-control"readonly></div>
                                               </div>
                                           </div>
                                           
@@ -71,7 +72,7 @@ $tbl_perusahaan= new tbl_jurnalprakerin();
                                           
                                           <div class="col-6">
                                               <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Siswa</label></div>
-                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nama_prakerin" value="<?= $item['namaSiswa']; ?>" class="form-control"readonly></div>
+                                              <div class="col-12 col-md-9"><input type="text" id="text-input" name="nama_prakerin" value="<?= $item['nama']; ?>" class="form-control"readonly></div>
                                           </div>
                                           
                                           <div class="col-6">
